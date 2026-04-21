@@ -1,0 +1,6 @@
+
+AWS SkillBuilder: Curso AWS Cloud Practitioner Essentials em PT-BR:
+https://skillbuilder.aws/learn/94T2BEN85A/aws-cloud-practitioner-essentials-portugus
+
+Simulados recomendados (EN):
+https://www.udemy.com/course/practice-exams-aws-certified-cloud-practitioner
