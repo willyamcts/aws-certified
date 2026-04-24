@@ -75,7 +75,7 @@ Minha sugestão...
 7. Faça simulados novos
 8. Repita do item 4 ao 7 quantas vezes achar necessário até se sentir "preparado"
 
-Um ponto que devo ressaltar é em relação aos assuntos emergentes do momento, como IA e ML, na minha prova não me recordo de ter visto uma questão sobre o assunto. Sei que as provas e questões são diferentes para cada prova, mas sugiro não focar tanto nesses assuntos, porém, você deve ter conhecimento que eles existem e para que serve.
+Um ponto que devo ressaltar é em relação aos assuntos emergentes do momento, como IA e ML. Na minha prova não me recordo de ter visto uma questão sobre estes assuntos. Sei que as questões variam de uma prova para outra, mas recomendo não focar muito nesses assuntos. Ainda assim, é importante conhecê-los e compreender para que servem.
 
 
 ## ❓ Vale a pena?
