@@ -1,46 +1,25 @@
-# Casos de Uso - Criptografia, KMS e Gestao de Segredos
+﻿# Casos de Uso
 
-## Caso 1: Banco relacional com rotacao de senha
+## Cenario 1: Pico de acesso em janela curta
 
-Cenario:
-- aplicacao em ECS acessa Aurora
-- auditoria exige rotacao automatica
+**Padrao recomendado:** camada gerenciada com escala automatica e desacoplamento.  
+**Motivo:** absorve variacao sem intervencao manual intensa.  
+**Sinal de prova:** termos como “pico imprevisivel”, “manter latencia” e “baixo esforco operacional”.
 
-Arquitetura:
-- Secrets Manager com rotacao
-- task role do ECS para ler segredo
-- KMS customer-managed key para criptografia do segredo
+## Cenario 2: Requisito de auditoria e conformidade
 
-## Caso 2: API publica com TLS gerenciado
+**Padrao recomendado:** identidade granular, trilha de auditoria e criptografia fim a fim.  
+**Motivo:** garante rastreabilidade e protecao de dado sensivel.  
+**Sinal de prova:** “compliance”, “registro de acesso”, “dados sensiveis”.
 
-Cenario:
-- API Gateway + CloudFront
-- sem gerenciamento manual de certificados
+## Cenario 3: Reducao de custo com mesma experiencia
 
-Arquitetura:
-- ACM publico com renovacao automatica
-- certificado em us-east-1 para CloudFront
+**Padrao recomendado:** ajustar classe/capacidade pelo perfil real de consumo.  
+**Motivo:** evita overprovisioning e reduz gasto recorrente.  
+**Sinal de prova:** “otimizacao de custo”, “padrao de uso conhecido”, “sem degradar UX”.
 
-## Caso 3: Empresa com exigencia de chave sob controle estrito
+## Cenario 4: Evolucao incremental de arquitetura
 
-Cenario:
-- compliance exige segregacao de acesso a chaves
-
-Arquitetura:
-- customer-managed keys no KMS
-- key policy minima + grants para aplicacoes
-- trilha de auditoria via CloudTrail
-
-## Caso 4: Aplicacao legado com segredo em arquivo
-
-Cenario:
-- senha hardcoded no codigo
-
-Arquitetura:
-- migrar para Parameter Store/Secrets Manager
-- remover credencial do repositorio
-- uso de IAM role no runtime
-
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+**Padrao recomendado:** comecar simples, com componentes gerenciados e pontos de extensao claros.  
+**Motivo:** acelera entrega e reduz risco de complexidade prematura.  
+**Sinal de prova:** “entrega rapida”, “crescimento gradual”, “equipe pequena”.

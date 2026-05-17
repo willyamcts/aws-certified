@@ -1,55 +1,113 @@
-# Questoes - AWS Organizations, Governanca e Custos
+﻿# Questoes de Revisao
 
-## 1)
-Qual recurso impede que contas membro desativem o CloudTrail?
+## QuestÃ£o 1
 
-A. IAM Policy
-B. Security Group
-C. SCP
-D. NACL
+Um cenario exige decisao correta em Governanca e Custos. Qual abordagem e mais aderente?
 
-Resposta: C
+A) Aplicar solucao generica sem considerar Organizations.
+B) Usar Organizations com configuracao orientada ao requisito e operacao enxuta.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
 
-## 2)
-Uma empresa quer onboarding rapido de novas contas com baseline de seguranca. Melhor opcao?
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-A. Criar contas manualmente
-B. AWS Control Tower
-C. Apenas AWS Config
-D. Apenas Budgets
+âœ… **Resposta correta:** B
 
-Resposta: B
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de governanca e custos com melhor equilibrio entre requisito, risco e operacao.
 
-## 3)
-Para visao detalhada de custo por tag e consulta SQL, qual combinacao e indicada?
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
 
-A. Budgets + SNS
-B. Cost Explorer apenas
-C. CUR + Athena
-D. Trusted Advisor
+</details>
 
-Resposta: C
+## QuestÃ£o 2
 
-## 4)
-SCP tem qual comportamento?
+Qual escolha reduz risco operacional neste dominio?
 
-A. Concede permissao automaticamente
-B. Limita permissao maxima
-C. Cria usuarios IAM
-D. Substitui role trust policy
+A) Resolver tudo manualmente durante incidente.
+B) Combinar SCP com observabilidade e automacao.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
 
-Resposta: B
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-## 5)
-Workload estavel de longo prazo em EC2. Melhor estrategia de economia?
+âœ… **Resposta correta:** B
 
-A. On-Demand fixo
-B. Savings Plans ou RI
-C. Spot apenas
-D. Sem autoscaling
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de governanca e custos com melhor equilibrio entre requisito, risco e operacao.
 
-Resposta: B
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+</details>
+
+## QuestÃ£o 3
+
+Para manter custo sob controle sem perder qualidade tecnica, o que fazer?
+
+A) Escolher sempre a opcao mais barata sem validar requisito.
+B) Dimensionar com base no uso real e aproveitar Cost Explorer quando fizer sentido.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de governanca e custos com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
+## QuestÃ£o 4
+
+Qual alternativa tende a ser incorreta na prova de 
+
+A) A que atende requisito dominante com menor complexidade.
+B) A que ignora sinais de rightsizing e dependencias da arquitetura.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de governanca e custos com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
+## QuestÃ£o 5
+
+Qual revisao aumenta acerto neste modulo?
+
+A) Rever apenas definicoes sem pratica de cenario.
+B) Treinar questoes focadas em Savings Plans e tags com explicacao de trade-offs.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de governanca e custos com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
 

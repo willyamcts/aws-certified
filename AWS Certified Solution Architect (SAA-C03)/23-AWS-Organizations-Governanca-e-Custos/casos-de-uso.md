@@ -1,51 +1,25 @@
-# Casos de Uso - AWS Organizations, Governanca e Custos
+﻿# Casos de Uso
 
-## Caso 1: Empresa em crescimento rapido
+## Cenario 1: Pico de acesso em janela curta
 
-Cenario:
-- 40 contas AWS em 6 meses
-- times independentes por produto
-- necessidade de guardrails comuns
+**Padrao recomendado:** camada gerenciada com escala automatica e desacoplamento.  
+**Motivo:** absorve variacao sem intervencao manual intensa.  
+**Sinal de prova:** termos como “pico imprevisivel”, “manter latencia” e “baixo esforco operacional”.
 
-Arquitetura:
-- AWS Control Tower para landing zone
-- OUs por ambiente (Sandbox, Dev, Prod)
-- SCP bloqueando desativacao de CloudTrail e uso fora de regioes permitidas
-- Identity Center para acesso federado
+## Cenario 2: Requisito de auditoria e conformidade
 
-## Caso 2: FinOps com chargeback
+**Padrao recomendado:** identidade granular, trilha de auditoria e criptografia fim a fim.  
+**Motivo:** garante rastreabilidade e protecao de dado sensivel.  
+**Sinal de prova:** “compliance”, “registro de acesso”, “dados sensiveis”.
 
-Cenario:
-- diretoria quer custo por produto e por squad
+## Cenario 3: Reducao de custo com mesma experiencia
 
-Arquitetura:
-- Tags obrigatorias (Owner, CostCenter, Product, Environment)
-- CUR no S3
-- Athena + QuickSight para dashboards de chargeback
-- Budgets por conta e por tag
+**Padrao recomendado:** ajustar classe/capacidade pelo perfil real de consumo.  
+**Motivo:** evita overprovisioning e reduz gasto recorrente.  
+**Sinal de prova:** “otimizacao de custo”, “padrao de uso conhecido”, “sem degradar UX”.
 
-## Caso 3: Reducao de custo compute
+## Cenario 4: Evolucao incremental de arquitetura
 
-Cenario:
-- gasto elevado em EC2 e Fargate
-
-Arquitetura:
-- Savings Plans para base estavel
-- Spot para batch e workers stateless
-- autoscaling com limites
-- rightsizing com Compute Optimizer
-
-## Caso 4: Governanca de seguranca
-
-Cenario:
-- auditoria exige trilhas imutaveis
-
-Arquitetura:
-- conta de log central
-- CloudTrail org trail
-- bucket de log com Object Lock
-- bloqueios SCP para impedir alteracao de trilha
-
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+**Padrao recomendado:** comecar simples, com componentes gerenciados e pontos de extensao claros.  
+**Motivo:** acelera entrega e reduz risco de complexidade prematura.  
+**Sinal de prova:** “entrega rapida”, “crescimento gradual”, “equipe pequena”.

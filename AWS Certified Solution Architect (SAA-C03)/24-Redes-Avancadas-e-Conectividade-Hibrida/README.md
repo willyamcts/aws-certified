@@ -1,50 +1,45 @@
-# 24 Redes Avancadas e Conectividade Hibrida
+﻿# Redes Avancadas e Conectividade Hibrida
 
-## Objetivos do modulo
+## Visao Geral
 
-- dominar conectividade entre VPCs, contas e datacenter on-premises
-- diferenciar VPC Peering, Transit Gateway, PrivateLink, VPN e Direct Connect
-- desenhar redes com resiliencia, seguranca e baixa latencia
-- resolver questoes de prova com foco em roteamento, isolamento e custo de transferencia
+Este modulo cobre **Conectividade hibrida, roteamento e segmentacao avancada** com foco no tipo de decisao que aparece no SAA-C03. A ideia central e transformar requisitos de negocio em escolhas tecnicas objetivas, equilibrando resiliencia, desempenho, seguranca e custo. Em prova, o diferencial nao e decorar servico isolado: e identificar qual restricao do cenario pesa mais e escolher o padrao que reduz risco operacional.
 
-## Conceitos fundamentais
+## Conceitos-Chave
 
-No SAA-C03, redes avancadas aparecem quando o cenario envolve multiplas VPCs, multiplas contas, conectividade hibrida e servicos privados.
+- Papel dos servicos: Transit Gateway, Direct Connect, VPN, PrivateLink.
+- Priorizacao por requisito dominante (latencia, disponibilidade, conformidade ou custo).
+- Integracao entre servicos com desacoplamento e observabilidade minima.
+- Escolha de arquitetura com menor complexidade viavel para o contexto.
 
-## Componentes chave
+## Relevancia para o Exame
 
-- VPC Peering: conecta duas VPCs diretamente; nao suporta transitive routing.
-- AWS Transit Gateway (TGW): hub-and-spoke para muitas VPCs e VPNs.
-- AWS PrivateLink: expor/consumir servico privado sem peering completo.
-- Site-to-Site VPN: tunel IPSec pela internet.
-- AWS Direct Connect (DX): link dedicado de baixa variabilidade para on-premises.
-- Route 53 Resolver endpoints: DNS hibrido entre AWS e on-premises.
+No SAA-C03, este dominio costuma aparecer em perguntas com duas alternativas tecnicamente possiveis. O desempate normalmente vem de detalhes como: modelo de consistencia, estrategia de failover, custo de operacao recorrente, impacto de throughput e nivel de automacao exigido. Por isso, estudar este modulo significa treinar criterio de escolha, nao apenas nomenclatura.
 
-## Quando usar cada um
+## Sinais Praticos (3 a 5)
 
-- poucas VPCs e topologia simples: VPC Peering
-- muitas VPCs/contas com roteamento central: TGW
-- publicar servico interno para outras contas com menor superficie: PrivateLink
-- conectividade rapida sem circuito dedicado: VPN
-- conectividade estavel de alto throughput: Direct Connect (com VPN de backup)
+1. Quando o enunciado pede resposta elastica com pouca operacao manual, privilegie servicos gerenciados.
+2. Quando houver dependencia entre componentes, valide se existe desacoplamento para absorver pico e falha parcial.
+3. Quando houver restricao de seguranca, confirme criptografia em transito/repouso e menor privilegio.
+4. Se o custo for parte do requisito, compare classes de consumo, modo de capacidade e padrao de acesso.
+5. Se o cenario for global, valide rota de trafego, latencia e estrategia de distribuicao.
 
-## Dicas de exame
+## Armadilhas Comuns
 
-- peering nao e transitive; TGW resolve isso.
-- se o enunciado pede acesso a servico privado sem abrir CIDR completo, pense em PrivateLink.
-- DX costuma aparecer com requisito de latencia mais previsivel e trafego alto.
-- para alta disponibilidade hibrida, combine DX + VPN backup.
-- Security Group e stateful; NACL e stateless (armadilha recorrente).
+- Escolher recurso premium sem necessidade real do cenario.
+- Confundir recurso de alta disponibilidade com recurso de escala de leitura.
+- Ignorar limites de servico e comportamento em falha.
+- Resolver requisito de seguranca com ferramenta inadequada para ciclo de vida do segredo.
 
-## Links relacionados
+## Proximo Passo de Revisao
 
-- [Cheatsheet](./cheatsheet.md)
-- [Casos de uso](./casos-de-uso.md)
-- [Questoes](./questoes.md)
-- [Flashcards](./flashcards.md)
-- [Lab](./lab.md)
-- [Links oficiais](./links.md)
+1. Revise o cheatsheet.md para consolidar sinais de decisao.
+2. Resolva questoes.md sem consulta para testar julgamento tecnico.
+3. Use lashcards.md em revisao curta diaria para fixar diferencas criticas.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Estudos Complementares
 
+Para reforco de fundamentos AWS antes de aprofundar cenarios arquiteturais:
+https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
+
+Para conectar arquitetura com IA generativa e Bedrock em trilha complementar:
+https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil

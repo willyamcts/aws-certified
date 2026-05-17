@@ -1,60 +1,113 @@
-# Questoes - Recuperacao de Desastres e Continuidade
+﻿# Questoes de Revisao
 
-## 1)
-Uma empresa exige RTO de minutos e RPO de segundos para aplicacao global. Qual estrategia e mais adequada?
+## QuestÃ£o 1
 
-A. Backup and Restore
-B. Pilot Light
-C. Warm Standby
-D. Multi-Site Active/Active
+Um cenario exige decisao correta em Resiliencia e DR. Qual abordagem e mais aderente?
 
-Resposta: D
-Motivo: menor RTO/RPO, apesar de maior custo.
+A) Aplicar solucao generica sem considerar Multi-AZ.
+B) Usar Multi-AZ com configuracao orientada ao requisito e operacao enxuta.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
 
-## 2)
-A aplicacao roda em uma unica regiao com RDS Multi-AZ. Qual risco permanece?
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-A. Falha de instancia
-B. Falha de AZ
-C. Desastre regional
-D. Falha de disco
+âœ… **Resposta correta:** B
 
-Resposta: C
-Motivo: Multi-AZ nao cobre perda total da regiao.
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de resiliencia e dr com melhor equilibrio entre requisito, risco e operacao.
 
-## 3)
-Qual servico simplifica replicacao continua de servidores para DR com baixa mudanca na aplicacao?
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
 
-A. AWS Backup
-B. AWS Elastic Disaster Recovery
-C. AWS DataSync
-D. CloudEndure Migration
+</details>
 
-Resposta: B
-Motivo: servico especifico para DR de servidores.
+## QuestÃ£o 2
 
-## 4)
-Para objetos S3 criticos, qual combinacao aumenta resiliencia e recuperacao de versoes apagadas acidentalmente?
+Qual escolha reduz risco operacional neste dominio?
 
-A. S3 Standard + Glacier
-B. Versioning + CRR
-C. Intelligent-Tiering + MFA
-D. Transfer Acceleration + ACL
+A) Resolver tudo manualmente durante incidente.
+B) Combinar failover com observabilidade e automacao.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
 
-Resposta: B
-Motivo: versioning protege contra delete/logica e CRR protege contra falha regional.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-## 5)
-Em prova, a frase "least operational overhead" normalmente favorece:
+âœ… **Resposta correta:** B
 
-A. Solucao self-managed em EC2
-B. Processo manual de restore
-C. Servicos gerenciados com automacao
-D. Ferramentas third-party sem integracao
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de resiliencia e dr com melhor equilibrio entre requisito, risco e operacao.
 
-Resposta: C
-Motivo: AWS privilegia operacao simplificada quando explicitado.
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+</details>
+
+## QuestÃ£o 3
+
+Para manter custo sob controle sem perder qualidade tecnica, o que fazer?
+
+A) Escolher sempre a opcao mais barata sem validar requisito.
+B) Dimensionar com base no uso real e aproveitar DR strategies quando fizer sentido.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de resiliencia e dr com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
+## QuestÃ£o 4
+
+Qual alternativa tende a ser incorreta na prova de 
+
+A) A que atende requisito dominante com menor complexidade.
+B) A que ignora sinais de RTO/RPO e dependencias da arquitetura.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de resiliencia e dr com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
+## QuestÃ£o 5
+
+Qual revisao aumenta acerto neste modulo?
+
+A) Rever apenas definicoes sem pratica de cenario.
+B) Treinar questoes focadas em desacoplamento e health checks com explicacao de trade-offs.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de resiliencia e dr com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
 

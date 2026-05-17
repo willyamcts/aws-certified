@@ -1,15 +1,16 @@
-# Links Oficiais - AWS Organizations, Governanca e Custos
+﻿# Links Recomendados
 
-- AWS Organizations: https://docs.aws.amazon.com/organizations/
-- AWS Control Tower: https://docs.aws.amazon.com/controltower/
-- Service Control Policies: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html
-- IAM Identity Center: https://docs.aws.amazon.com/singlesignon/
-- AWS Budgets: https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html
-- AWS Cost Explorer: https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html
-- Cost and Usage Report (CUR): https://docs.aws.amazon.com/cur/
-- Savings Plans: https://docs.aws.amazon.com/savingsplans/
-- Reserved Instances: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html
+## Referencias oficiais AWS
+- https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html
+- https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html
+- https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Por que estes links importam
+- Documentacao oficial reduz ambiguidade de comportamento de servico em prova.
+- Guias de boas praticas ajudam a entender trade-off, nao apenas configuracao.
+- Whitepapers e paginas de certificacao alinham terminologia e expectativa do exame.
 
+## Ordem sugerida de leitura
+1. Visao geral do servico.
+2. Limites, seguranca e custos.
+3. Boas praticas e padroes de arquitetura.

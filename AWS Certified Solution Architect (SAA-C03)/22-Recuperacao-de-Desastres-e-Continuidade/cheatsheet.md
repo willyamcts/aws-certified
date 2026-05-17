@@ -1,37 +1,27 @@
-# Cheatsheet - Recuperacao de Desastres e Continuidade
+﻿# Guia Rapido
 
-## Mapa rapido de decisao
+## Tabela de decisao
 
-| Requisito | Melhor padrao | Observacao de prova |
-|---|---|---|
-| Menor custo, aceita horas de indisponibilidade | Backup and Restore | Foco em snapshots, backups e restore automatizado |
-| RTO de minutos com custo controlado | Pilot Light | Banco e dados replicados, compute sobe no desastre |
-| Baixo downtime com operacao simples | Warm Standby | Ambiente reduzido sempre ativo em segunda regiao |
-| Quase zero downtime e perda de dados | Active/Active | Usa roteamento global e dados replicados em tempo quase real |
+| Sinal do enunciado | Quando usar | Quando evitar | Armadilha de prova |
+|---|---|---|---|
+| Baixa operacao manual | Servico gerenciado com automacao nativa | Solucao autogerenciada sem necessidade | Confundir controle total com melhor custo total |
+| Pico imprevisivel | Escala horizontal e desacoplamento | Capacidade fixa e ajuste manual | Dimensionar para media e falhar no pico |
+| Requisito de seguranca forte | Menor privilegio + criptografia + auditoria | Permissao ampla por conveniencia | Achar que criptografia sozinha resolve governanca |
+| Custo como restricao explicita | Escolha por perfil de consumo e acesso | Classe unica para todo dado | Reduzir custo sem validar impacto funcional |
 
-## Servicos chave
+## Sinais de servico
 
-- Route 53: failover, health checks, latency routing
-- AWS Backup: backup centralizado, vault lock, cross-account
-- Elastic Disaster Recovery: replicacao continua de servidores
-- S3: versioning, CRR, lifecycle, object lock
-- RDS/Aurora: backups automaticos, snapshots, global database
-- DynamoDB: PITR, global tables
+- **Backup**: priorize quando o cenario precisa de integracao nativa e menor carga operacional.
+- **Pilot Light**: use quando houver necessidade de elasticidade controlada e comportamento previsivel em pico.
 
-## Armadilhas comuns
+## Quando usar este modulo na revisao
 
-- confundir alta disponibilidade (multi-AZ) com DR regional
-- ignorar custo de replicacao cross-region
-- escolher arquitetura complexa sem necessidade de negocio
-- esquecer de testar runbooks de failover/failback
+- Antes de simulados de arquitetura com foco em trade-offs.
+- Quando houver erro recorrente de escolha entre duas alternativas parecidas.
+- Na reta final para calibrar criterio de eliminacao de opcoes.
 
-## Frases gatilho do exame
+## Armadilhas recorrentes
 
-- "regional disaster" => multi-region
-- "least operational overhead" => servico gerenciado
-- "recover quickly" => warm standby ou active/active
-- "cost-effective" => backup and restore ou pilot light
-
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+- Resolver disponibilidade com recurso de performance.
+- Trocar simplicidade por arquitetura superdimensionada.
+- Ignorar observabilidade ao definir desenho final.

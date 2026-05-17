@@ -1,35 +1,99 @@
-# Flashcards - Redes Avancadas e Conectividade Hibrida
+﻿# Cartoes de Revisao
 
-1. Peering e transitive?
-- Nao.
+## Card 01
 
-2. Hub de roteamento para muitas VPCs?
-- Transit Gateway.
+**Pergunta:** Qual e o foco central deste modulo?
 
-3. Acesso privado a servico entre contas sem abrir toda rede?
-- PrivateLink.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-4. Conexao IPSec sobre internet?
-- Site-to-Site VPN.
+**Resposta:**
+Dominar decisoes de Conectividade Hibrida orientadas por cenarios da prova SAA-C03.
 
-5. Link dedicado AWS-on-premises?
-- Direct Connect.
+</details>
 
-6. Melhor para poucas VPCs e topologia simples?
-- VPC Peering.
+## Card 02
 
-7. NACL e stateful?
-- Nao, e stateless.
+**Pergunta:** Qual erro recorrente neste tema?
 
-8. Security Group e stateful?
-- Sim.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-9. DNS hibrido para zona privada na AWS?
-- Route 53 Resolver endpoint.
+**Resposta:**
+Aplicar resposta generica sem validar sinais especificos de conectividade hibrida no enunciado.
 
-10. Backup comum para DX?
-- VPN.
+</details>
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Card 03
+
+**Pergunta:** Como identificar a melhor alternativa?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Priorizar requisito dominante e servicos que cobrem Direct Connect e VPN com menor operacao.
+
+</details>
+
+## Card 04
+
+**Pergunta:** Qual trade-off costuma aparecer?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Equilibrar Direct Connect com custo, desempenho e simplicidade operacional.
+
+</details>
+
+## Card 05
+
+**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Uso intencional de VPN com observabilidade para reduzir risco operacional.
+
+</details>
+
+## Card 06
+
+**Pergunta:** Como evitar armadilha de overengineering?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Evitar componentes extras quando Transit Gateway ou BGP ja resolve o requisito.
+
+</details>
+
+## Card 07
+
+**Pergunta:** Qual ponto revisar antes do simulado?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Diferencas praticas entre BGP e PrivateLink.
+
+</details>
+
+## Card 08
+
+**Pergunta:** Qual fechamento eficiente de revisao?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Converter erros deste modulo em regras objetivas de decisao sobre conectividade hibrida.
+
+</details>
+
 

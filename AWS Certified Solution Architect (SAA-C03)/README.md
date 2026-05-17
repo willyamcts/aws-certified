@@ -1,46 +1,58 @@
-# 📚 AWS Certified Solutions Architect – Associate (SAA-C03)
-
-<p align="center">
-  <img src="./foto-thiago-cardoso.jpg" alt="Thiago Cardoso" width="180" style="border-radius: 12px;" />
+﻿<p align="center">
+  <img src="./assets/Banner-SolutionsArchitect.png" alt="Banner AWS Solutions Architect Associate" width="100%" />
 </p>
 
-<p align="center"><strong>Criado por Thiago Cardoso</strong><br/>
-<a href="https://www.linkedin.com/in/analyticsthiagocardoso">LinkedIn</a></p>
+<p align="center">
+  <img src="./assets/Logo-CloudStudy.png" alt="CloudStudy" width="240" />
+  <img src="./assets/Solution%20Architect%20Badge.png" alt="AWS Solutions Architect Associate Badge" width="180" />
+</p>
+
+<h1 align="center">AWS Solutions Architect Associate (SAA-C03)</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=Stars&color=2563eb&labelColor=374151" />
+  <img src="https://img.shields.io/github/forks/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=Forks&color=2563eb&labelColor=374151" />
+  <img src="https://img.shields.io/github/license/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=License&color=0f766e&labelColor=374151" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/CONTEÚDO-PT--BR-0284c7?style=for-the-badge&labelColor=0f172a" />
+  <img src="https://img.shields.io/badge/OPEN-SOURCE-2563eb?style=for-the-badge&labelColor=0f172a" />
+  <img src="https://img.shields.io/badge/USO-EDUCACIONAL-1d4ed8?style=for-the-badge&labelColor=0f172a" />
+  <img src="https://img.shields.io/badge/CERTIFICATION-SAA--C03-1e40af?style=for-the-badge&labelColor=0f172a" />
+  <img src="https://img.shields.io/badge/CLOUD-JOURNEY-0f766e?style=for-the-badge&labelColor=0f172a" />
+</p>
+
+<p align="center">
+  <a href="#roteiro-de-estudo">Roteiro de estudo</a> •
+  <a href="#modulos">Módulos</a> •
+  <a href="./29-Simulados-e-Questoes/README.md">Simulados</a> •
+  <a href="./31-Recursos-e-Links/README.md">Recursos</a>
+</p>
+
+<p align="center"><sub>Material aberto por Thiago Cardoso • <a href="https://www.linkedin.com/in/analyticsthiagocardoso">LinkedIn</a></sub></p>
 
 ---
 
-## ☕ Apoie este Projeto
+## O que você vai encontrar neste repositório
 
-Se este conteúdo ajudou nos seus estudos para a certificação **AWS Solutions Architect Associate**, considere apoiar com um café! O projeto é 100% gratuito e qualquer contribuição ajuda a manter o material atualizado.
+| Tema | O que você encontra aqui |
+|---|---|
+| Arquiteturas reais da AWS | Cenários de prova, trade-offs e decisões arquiteturais com foco prático. |
+| Alta disponibilidade e resiliência | Multi-AZ, failover, desacoplamento, continuidade e estratégias de DR. |
+| Segurança e IAM | IAM, KMS, criptografia, políticas, auditoria e governança aplicada. |
+| Redes e VPC | Subnets, roteamento, endpoints, conectividade híbrida e segurança de rede. |
+| Banco de dados e armazenamento | RDS, Aurora, DynamoDB, S3, EBS, EFS e escolhas por desempenho e custo. |
+| Serverless e containers | Lambda, API Gateway, ECS, EKS, Fargate e padrões modernos de execução. |
+| Otimização de custos | Rightsizing, storage classes, automação e decisões custo-eficientes. |
+| Simulados comentados | Questões no estilo SAA-C03, revisão de alternativas e caderno de erros. |
+| Labs, mapas e flashcards | Labs guiados, roteiros por semana, cheatsheets e revisão espaçada. |
 
-### Doação via Pix
-
-Você pode usar a chave aleatória abaixo ou escanear o QR Code:
-
-**Chave Pix (Copia e Cola):**
-`c8ca2085-c329-4712-8da9-397d10b41cf5`
-
-<p align="center">
-<img width="250" height="250" alt="Image" src="https://github.com/user-attachments/assets/351596f0-5896-404b-ab19-d55a661d5b9b" />
-</p>
-
----
-<h2 align="center">Star History</h2>
-
-<p align="center">
-  <a href="https://www.star-history.com/#Thiago-code-lab/aws-solutions-architect-brasil&Date">
-    <img
-      src="https://api.star-history.com/svg?repos=Thiago-code-lab/aws-solutions-architect-brasil&type=Date"
-      alt="Star History Chart"
-    />
-  </a>
-</p>
-
- ## 🚦 Por onde começar
+## 🚦 Por onde começar
 
 - **Trilha para iniciantes (do zero):** siga [Módulo 01](./01-Introducao-SAA-C03/README.md) → [Módulo 02](./02-IAM-e-Seguranca/README.md) → [Módulo 04](./04-Computacao-EC2/README.md) → [Módulo 05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) → [Módulo 06](./06-Amazon-S3-e-Armazenamento/README.md) → [Módulo 08](./08-VPC-e-Redes/README.md) → [Módulo 10](./10-Banco-de-Dados/README.md) e complete na ordem até [Módulo 31](./31-Recursos-e-Links/README.md), incluindo os labs correspondentes em cada semana.
 - **Revisão rápida:** faça revisão por [cheatsheets](./01-Introducao-SAA-C03/cheatsheet.md), [flashcards](./01-Introducao-SAA-C03/flashcards.md) e [questões](./29-Simulados-e-Questoes/README.md), priorizando módulos com maior peso no exame (segurança, resiliência, performance e custo).
-- **Reta final / últimos 14 dias:** concentre em [05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md), [06](./06-Amazon-S3-e-Armazenamento/README.md), [08](./08-VPC-e-Redes/README.md), [10](./10-Banco-de-Dados/README.md), [13](./13-DNS-Route53-e-CloudFront/README.md), [14](./14-Desacoplamento-SQS-SNS-EventBridge/README.md), [17](./17-Serverless-Lambda-API-Gateway/README.md), [22](./22-Recuperacao-de-Desastres-e-Continuidade/README.md), [26](./26-Well-Architected-Framework/README.md) e finalize com [simulados](./29-Simulados-e-Questoes/README.md).
+- **Reta final / últimos 14 dias:** concentre em [05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md), [06](./06-Amazon-S3-e-Armazenamento/README.md), [08](./08-VPC-e-Redes/README.md), [10](./10-Banco-de-Dados/README.md), [13](./13-DNS-Route53-e-CloudFront/README.md), [14](./14-Desacoplamento-SQS-SNS-EventBridge/README.md), [17](./17-Serverless-Lambda-API-Gateway/README.md), [22](./22-Recuperacao-de-Desastres-e-Continuidade/README.md), [26](./26-Well-Architected-Framework/README.md) e finalize com o hub do [Módulo 29](./29-Simulados-e-Questoes/README.md): simulados completos, mini-simulados por domínio, caderno de erros e plano de reta final.
 
 > Repositório completo de estudos em Português do Brasil para quem quer passar no exame com entendimento real de arquitetura na AWS.
 
@@ -49,8 +61,6 @@ Portal publicado: https://thiago-code-lab.github.io/aws-solutions-architect-bras
 ## 🎯 Sobre este Repositório
 
 Este repositório se diferencia por combinar conteúdo em Português do Brasil com foco em raciocínio arquitetural real (trade-offs, casos de uso e armadilhas de prova), labs curados para baixo custo, portal navegável no GitHub Pages e questões práticas no estilo do exame SAA-C03.
-
-[![GitHub Pages](https://img.shields.io/website?url=https%3A%2F%2Fthiago-code-lab.github.io%2Faws-solutions-architect-brasil%2F&label=GitHub%20Pages)](https://thiago-code-lab.github.io/aws-solutions-architect-brasil/) [![Deploy GitHub Pages](https://github.com/thiago-code-lab/aws-solutions-architect-brasil/actions/workflows/deploy.yml/badge.svg)](https://github.com/thiago-code-lab/aws-solutions-architect-brasil/actions/workflows/deploy.yml) [![License](https://img.shields.io/github/license/thiago-code-lab/aws-solutions-architect-brasil)](./LICENSE) [![GitHub stars](https://img.shields.io/github/stars/thiago-code-lab/aws-solutions-architect-brasil?style=social)](https://github.com/thiago-code-lab/aws-solutions-architect-brasil/stargazers)
 
 Este material foi estruturado para um estudante de nível intermediário, que já usa AWS no dia a dia e já domina os fundamentos de cloud. O foco não é memorização cega: o objetivo é desenvolver o raciocínio esperado de um arquiteto de soluções, entendendo trade-offs entre resiliência, desempenho, segurança e custo.
 
@@ -65,6 +75,7 @@ O repositório foi pensado para funcionar bem no GitHub e no GitHub Pages. Cada 
 | Aplicações e arquiteturas seguras (Design Secure Applications and Architectures) | 24% | IAM, KMS, isolamento de rede, criptografia, trilhas de auditoria e governança | 02, 03, 08, 09, 14, 17, 20, 23, 24, 25 |
 | Arquiteturas otimizadas em custo (Design Cost-Optimized Architectures) | 18% | Rightsizing, classes de storage, modelos de compra, serverless e automação | 04, 06, 15, 17, 21, 23 |
 
+<a id="roteiro-de-estudo"></a>
 ## 🗺️ Mapa de Estudos
 
 ### Semana 1
@@ -115,6 +126,7 @@ O repositório foi pensado para funcionar bem no GitHub e no GitHub Pages. Cada 
 - Módulo 29: simulados completos
 - Módulo 30 e 31: glossário e revisão de links oficiais
 
+<a id="modulos"></a>
 ## 📁 Módulos
 
 | # | Módulo | Domínio predominante | Status | Link |
@@ -147,7 +159,7 @@ O repositório foi pensado para funcionar bem no GitHub e no GitHub Pages. Cada 
 | 26 | Well-Architected Framework | Todos os domínios | ✅ Completo | [README](./26-Well-Architected-Framework/README.md) |
 | 27 | Casos de Uso Reais | Todos os domínios | ✅ Completo | [README](./27-Casos-de-Uso-Reais/README.md) |
 | 28 | Labs Práticos | Prática | ✅ Completo | [README](./28-Labs-Praticos/README.md) |
-| 29 | Simulados e Questões | Todos os domínios | ✅ Completo | [README](./29-Simulados-e-Questoes/README.md) |
+| 29 | Simulados, Questões e Reta Final | Todos os domínios | ✅ Completo | [README](./29-Simulados-e-Questoes/README.md) |
 | 30 | Glossário | Revisão | ✅ Completo | [README](./30-Glossario/README.md) |
 | 31 | Recursos e Links | Revisão | ✅ Completo | [README](./31-Recursos-e-Links/README.md) |
 
@@ -183,7 +195,7 @@ O repositório foi pensado para funcionar bem no GitHub e no GitHub Pages. Cada 
 | [26 - Well-Architected Framework](./26-Well-Architected-Framework/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
 | [27 - Casos de Uso Reais](./27-Casos-de-Uso-Reais/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
 | [28 - Labs Práticos](./28-Labs-Praticos/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
-| [29 - Simulados e Questões](./29-Simulados-e-Questoes/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
+| [29 - Simulados, Questões e Reta Final](./29-Simulados-e-Questoes/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
 | [30 - Glossário](./30-Glossario/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
 | [31 - Recursos e Links](./31-Recursos-e-Links/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
 
@@ -239,3 +251,4 @@ MIT
 - O repositório é atualizado periodicamente conforme mudanças em serviços AWS e no blueprint do exame.
 
 **Última revisão global:** 08/04/2026 (atualizar esta data sempre que concluírem uma revisão ampla do repositório).
+

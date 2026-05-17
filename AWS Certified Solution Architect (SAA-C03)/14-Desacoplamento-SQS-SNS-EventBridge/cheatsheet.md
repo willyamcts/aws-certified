@@ -1,95 +1,27 @@
-# Cheatsheet — Módulo 09: Desacoplamento (SQS, SNS, EventBridge)
+﻿# Guia Rapido
 
-## SQS Standard vs FIFO
+## Tabela de decisao
 
-| | Standard Queue | FIFO Queue |
-|---|---|---|
-| Ordering | Best-effort (pode reordenar) | Exato (First-In-First-Out) |
-| Entrega | At-least-once (pode duplicar) | Exactly-once (com deduplication ID) |
-| Throughput | Quase ilimitado | 300 TPS (3.000 com batching) |
-| Deduplication | Não | Sim (5 min janela) |
-| Message Groups | Não | Sim (paralelismo dentro do FIFO) |
-| Custo | Menor | Maior |
-
-## SQS — Parâmetros Críticos
-
-| Parâmetro | Padrão | Máximo | Descrição |
+| Sinal do enunciado | Quando usar | Quando evitar | Armadilha de prova |
 |---|---|---|---|
-| VisibilityTimeout | 30s | 12h | Tempo invisível após leitura |
-| Message Retention | 4 dias | 14 dias | Tempo na fila antes de expirar |
-| Max Message Size | 256 KB | 256 KB | Payload máximo (S3 para maiores) |
-| Long Polling waitTime | 0 (short) | 20s | Tempo de espera por mensagens |
-| Delay Queue | 0 | 15 min | Delay antes de ficar visível |
-| Dead Letter Queue maxReceiveCount | - | Configurável | Tentativas antes de ir para DLQ |
+| Baixa operacao manual | Servico gerenciado com automacao nativa | Solucao autogerenciada sem necessidade | Confundir controle total com melhor custo total |
+| Pico imprevisivel | Escala horizontal e desacoplamento | Capacidade fixa e ajuste manual | Dimensionar para media e falhar no pico |
+| Requisito de seguranca forte | Menor privilegio + criptografia + auditoria | Permissao ampla por conveniencia | Achar que criptografia sozinha resolve governanca |
+| Custo como restricao explicita | Escolha por perfil de consumo e acesso | Classe unica para todo dado | Reduzir custo sem validar impacto funcional |
 
-## SNS — Destinations por Tipo
+## Sinais de servico
 
-| Destination | Standard Topic | FIFO Topic |
-|---|---|---|
-| SQS | Sim | Apenas SQS FIFO |
-| Lambda | Sim | Não |
-| HTTP/HTTPS | Sim | Não |
-| Email | Sim | Não |
-| SMS | Sim | Não |
-| Firehose | Sim | Não |
-| SQS FIFO | Não | Sim |
+- **SQS**: priorize quando o cenario precisa de integracao nativa e menor carga operacional.
+- **SNS**: use quando houver necessidade de elasticidade controlada e comportamento previsivel em pico.
 
-## Kinesis Data Streams vs Firehose
+## Quando usar este modulo na revisao
 
-| | Kinesis Data Streams | Kinesis Firehose |
-|---|---|---|
-| Gerenciamento | Manual (shards, consumers) | Totalmente gerenciado |
-| Latência | ~200ms (real-time) | Near real-time (60s ou 1 MB buffer mín.) |
-| Consumidores | Múltiplos (KCL, Lambda, etc.) | Destinos fixos |
-| Replay | Sim (1-365 dias retenção) | Não |
-| Destinos | Consumidores customizados | S3, Redshift, OpenSearch, Splunk, HTTP |
-| Shards | Manual ou Auto Scaling | Auto-scaling gerenciado |
-| Transformação | Não (processado pelo consumer) | Lambda opcional antes do destino |
+- Antes de simulados de arquitetura com foco em trade-offs.
+- Quando houver erro recorrente de escolha entre duas alternativas parecidas.
+- Na reta final para calibrar criterio de eliminacao de opcoes.
 
-## SQS vs SNS vs EventBridge vs Kinesis
+## Armadilhas recorrentes
 
-| | SQS | SNS | EventBridge | Kinesis |
-|---|---|---|---|---|
-| Modelo | Pull (consumer faz polling) | Push (entrega para subscribers) | Push (rules → targets) | Pull + Push (EFO) |
-| Pattern | Task queue | Pub/Sub fan-out | Event routing | Data streaming |
-| Retenção | 1 min - 14 dias | Sem retenção | Archive (opcional) | 1-365 dias |
-| Replay | Não (DLQ para falhas) | Não | Sim (Archive + Replay) | Sim |
-| Ordenação | FIFO opcional | FIFO opcional | Não garantida | Por shard |
-| Melhor para | Workers assíncronos | Fan-out 1:N | Disparar ações em eventos | Analytics de stream |
-
-## Padrão Fan-Out com SNS → SQS
-```
-Producer
-  └── SNS Topic (order.events)
-        ├── SQS Queue → Consumer A (estoque)     [FilterPolicy: {eventType: [order.created]}]
-        ├── SQS Queue → Consumer B (faturamento) [FilterPolicy: {eventType: [order.created, order.completed]}]
-        └── Lambda → Consumer C (auditoria)      [Sem filtro - recebe todos]
-```
-
-## EventBridge Event Pattern (exemplo)
-```json
-{
-  "source": ["aws.rds"],
-  "detail-type": ["RDS DB Instance Event"],
-  "detail": {
-    "EventID": ["RDS-EVENT-0006"],
-    "SourceType": ["DB_INSTANCE"]
-  }
-}
-```
-
-## Dicas Rápidas de Prova
-- SQS FIFO: NOME da fila deve terminar em `.fifo`
-- SQS DLQ: deve ser mesmo tipo (Standard DLQ para Standard; FIFO DLQ para FIFO)
-- **Fan-out clássico**: SNS → múltiplas SQS Queues (não múltiplas SNS → um SQS)
-- Kinesis Shard = 1 MB/s entrada, 2 MB/s saída (shared) ou por consumer com Enhanced Fan-Out
-- **Amazon MQ = lift-and-shift** de brokers com AMQP/MQTT/STOMP; não escala infinitamente como SQS
-- EventBridge Partner Bus: SaaS (Salesforce, Datadog) → eventos direto no EventBridge sem código de polling
-- SQS Max Receive Count + DLQ = poison pill isolation (standard anti-pattern para mensagens problemáticas)
-- Kinesis Firehose: transforma com Lambda; carrega para S3/Redshift/OpenSearch; near-real-time (buffer)
-- Para evento em tempo real com múltiplos consumers independentes: Kinesis Data Streams > SQS
-- EventBridge Pipe = source → (optional filter + enrich) → target sem Lambda de roteamento
-
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+- Resolver disponibilidade com recurso de performance.
+- Trocar simplicidade por arquitetura superdimensionada.
+- Ignorar observabilidade ao definir desenho final.

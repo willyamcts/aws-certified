@@ -1,28 +1,39 @@
-# Lab - KMS + Secrets Manager + IAM Role
+﻿# Lab Guiado
 
 ## Objetivo
-Proteger credenciais de aplicacao usando segredo rotacionavel e acesso por role.
 
-## Passos
+Montar um fluxo minimo funcional que demonstre **Protecao de dados e ciclo de vida de segredos**, com validacao clara de comportamento e custo controlado para ambiente de estudo.
 
-1. Crie uma KMS customer-managed key para segredos.
-2. Crie um segredo no Secrets Manager (usuario/senha de teste) usando a chave.
-3. Crie role IAM para workload (EC2/Lambda) com permissao `secretsmanager:GetSecretValue` e `kms:Decrypt`.
-4. Associe a role ao recurso de compute.
-5. Leia o segredo via SDK/CLI sem credenciais estaticas.
-6. Ative rotacao automatica (quando aplicavel).
+## Servicos usados
+
+KMS, Secrets Manager, SSM Parameter Store, CloudHSM.
+
+## Faixa de custo esperada
+
+- Ambiente de estudo curto: baixo custo se executado por poucas horas.
+- Evite manter recursos ativos apos validacao.
+- Priorize camada gratuita quando disponivel.
+
+## Passo a passo
+
+1. Crie os recursos essenciais do fluxo em uma conta de laboratorio.
+2. Configure politicas minimas de acesso e observabilidade basica.
+3. Execute carga de teste pequena para validar resposta funcional.
+4. Simule uma falha simples (interrupcao de componente) e observe recuperacao.
+5. Registre metrica-chave e ajuste uma configuracao para comparar resultado.
 
 ## Validacao
 
-- workload le segredo com role
-- acesso negado para principal sem permissao
-- eventos de acesso aparecem no CloudTrail
+- Fluxo de ponta a ponta executa sem erro critico.
+- Logs/metricas mostram comportamento esperado.
+- Existe evidencia de decisao entre desempenho e custo.
 
-## Limpeza
+## Cleanup
 
-- remover segredo de laboratorio
-- remover role/policies e chave criada
+1. Remova recursos criados no laboratorio.
+2. Apague dados temporarios e snapshots nao necessarios.
+3. Revise faturamento no dia seguinte para confirmar encerramento.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Takeaway para prova
 
+O ponto principal e identificar qual servico reduz risco operacional mantendo aderencia ao requisito central do cenario.

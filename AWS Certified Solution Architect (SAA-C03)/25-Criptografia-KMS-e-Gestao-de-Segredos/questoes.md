@@ -1,55 +1,113 @@
-# Questoes - Criptografia, KMS e Gestao de Segredos
+﻿# Questoes de Revisao
 
-## 1)
-Uma aplicacao precisa rotacionar senha de banco automaticamente sem refatoracao grande. Melhor opcao?
+## QuestÃ£o 1
 
-A. Parameter Store Standard
-B. Secrets Manager
-C. ACM
-D. CloudHSM
+Um cenario exige decisao correta em Criptografia e Segredos. Qual abordagem e mais aderente?
 
-Resposta: B
+A) Aplicar solucao generica sem considerar KMS.
+B) Usar KMS com configuracao orientada ao requisito e operacao enxuta.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
 
-## 2)
-Qual opcao oferece maior controle sobre politica e ciclo de vida da chave?
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-A. AWS-owned key
-B. AWS-managed key
-C. Customer-managed KMS key
-D. S3-managed key apenas
+âœ… **Resposta correta:** B
 
-Resposta: C
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de criptografia e segredos com melhor equilibrio entre requisito, risco e operacao.
 
-## 3)
-Para usar certificado com CloudFront, em qual regiao o ACM publico deve ser criado?
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
 
-A. sa-east-1
-B. us-west-2
-C. us-east-1
-D. eu-west-1
+</details>
 
-Resposta: C
+## QuestÃ£o 2
 
-## 4)
-Qual servico e mais indicado para armazenar parametros de configuracao com custo reduzido e opcao de SecureString?
+Qual escolha reduz risco operacional neste dominio?
 
-A. Secrets Manager
-B. Parameter Store
-C. IAM
-D. CloudTrail
+A) Resolver tudo manualmente durante incidente.
+B) Combinar Secrets Manager com observabilidade e automacao.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
 
-Resposta: B
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-## 5)
-No KMS, qual elemento e obrigatorio para controle principal de acesso a chave?
+âœ… **Resposta correta:** B
 
-A. Security Group
-B. Key policy
-C. NACL
-D. S3 bucket policy
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de criptografia e segredos com melhor equilibrio entre requisito, risco e operacao.
 
-Resposta: B
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+</details>
+
+## QuestÃ£o 3
+
+Para manter custo sob controle sem perder qualidade tecnica, o que fazer?
+
+A) Escolher sempre a opcao mais barata sem validar requisito.
+B) Dimensionar com base no uso real e aproveitar rotacao quando fizer sentido.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de criptografia e segredos com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
+## QuestÃ£o 4
+
+Qual alternativa tende a ser incorreta na prova de 
+
+A) A que atende requisito dominante com menor complexidade.
+B) A que ignora sinais de envelope encryption e dependencias da arquitetura.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de criptografia e segredos com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
+## QuestÃ£o 5
+
+Qual revisao aumenta acerto neste modulo?
+
+A) Rever apenas definicoes sem pratica de cenario.
+B) Treinar questoes focadas em envelope encryption e auditoria com explicacao de trade-offs.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de criptografia e segredos com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
 

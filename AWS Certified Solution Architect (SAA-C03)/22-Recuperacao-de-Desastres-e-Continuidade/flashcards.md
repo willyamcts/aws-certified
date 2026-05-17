@@ -1,50 +1,99 @@
-# Flashcards - Recuperacao de Desastres e Continuidade
+﻿# Cartoes de Revisao
 
-1. RTO significa?
-- Tempo maximo para restaurar o servico.
+## Card 01
 
-2. RPO significa?
-- Janela maxima de perda de dados.
+**Pergunta:** Qual e o foco central deste modulo?
 
-3. Multi-AZ cobre desastre regional?
-- Nao.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-4. Menor custo de DR?
-- Backup and Restore.
+**Resposta:**
+Dominar decisoes de Resiliencia e DR orientadas por cenarios da prova SAA-C03.
 
-5. Estrategia com ambiente minimo ativo em segunda regiao?
-- Pilot Light.
+</details>
 
-6. Estrategia com ambiente reduzido sempre ativo?
-- Warm Standby.
+## Card 02
 
-7. Menor RTO/RPO em geral?
-- Active/Active multi-region.
+**Pergunta:** Qual erro recorrente neste tema?
 
-8. Servico de DR de servidores AWS?
-- AWS Elastic Disaster Recovery.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-9. Protecao de objetos contra exclusao acidental?
-- S3 Versioning.
+**Resposta:**
+Aplicar resposta generica sem validar sinais especificos de resiliencia e dr no enunciado.
 
-10. Replicacao de objetos entre regioes?
-- S3 CRR.
+</details>
 
-11. Failover DNS gerenciado?
-- Route 53 com health checks.
+## Card 03
 
-12. RDS Multi-AZ e para?
-- Alta disponibilidade regional, nao DR multi-region.
+**Pergunta:** Como identificar a melhor alternativa?
 
-13. DynamoDB para DR global?
-- Global Tables.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-14. O que testar periodicamente em DR?
-- Runbook de failover e failback.
+**Resposta:**
+Priorizar requisito dominante e servicos que cobrem Multi-AZ e failover com menor operacao.
 
-15. Frase de prova: "regional disaster"?
-- Exige desenho multi-region.
+</details>
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Card 04
+
+**Pergunta:** Qual trade-off costuma aparecer?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Equilibrar Multi-AZ com custo, desempenho e simplicidade operacional.
+
+</details>
+
+## Card 05
+
+**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Uso intencional de failover com observabilidade para reduzir risco operacional.
+
+</details>
+
+## Card 06
+
+**Pergunta:** Como evitar armadilha de overengineering?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Evitar componentes extras quando DR strategies ou RTO/RPO ja resolve o requisito.
+
+</details>
+
+## Card 07
+
+**Pergunta:** Qual ponto revisar antes do simulado?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Diferencas praticas entre desacoplamento e health checks.
+
+</details>
+
+## Card 08
+
+**Pergunta:** Qual fechamento eficiente de revisao?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Converter erros deste modulo em regras objetivas de decisao sobre resiliencia e dr.
+
+</details>
+
 

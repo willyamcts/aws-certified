@@ -1,72 +1,45 @@
-# 22 Recuperacao de Desastres e Continuidade
+﻿# Recuperacao de Desastres e Continuidade
 
-## Objetivos do modulo
+## Visao Geral
 
-- dominar RTO e RPO e mapear cada estrategia de DR ao requisito de negocio
-- diferenciar Backup and Restore, Pilot Light, Warm Standby e Multi-Site Active/Active
-- selecionar servicos AWS para continuidade: AWS Backup, Elastic Disaster Recovery, Route 53, Aurora Global Database, DynamoDB Global Tables e S3 CRR
-- responder questoes de prova equilibrando resiliencia, custo e complexidade operacional
+Este modulo cobre **RTO/RPO e estrategias de continuidade** com foco no tipo de decisao que aparece no SAA-C03. A ideia central e transformar requisitos de negocio em escolhas tecnicas objetivas, equilibrando resiliencia, desempenho, seguranca e custo. Em prova, o diferencial nao e decorar servico isolado: e identificar qual restricao do cenario pesa mais e escolher o padrao que reduz risco operacional.
 
-## Conceitos fundamentais
+## Conceitos-Chave
 
-Recuperacao de desastres no SAA-C03 nao e apenas backup. A prova cobra desenho arquitetural que continue operando quando houver falha de AZ, regiao, servico gerenciado ou erro humano.
+- Papel dos servicos: Backup, Pilot Light, Warm Standby, Multi-Region.
+- Priorizacao por requisito dominante (latencia, disponibilidade, conformidade ou custo).
+- Integracao entre servicos com desacoplamento e observabilidade minima.
+- Escolha de arquitetura com menor complexidade viavel para o contexto.
 
-- RTO (Recovery Time Objective): tempo maximo aceitavel para restaurar o servico.
-- RPO (Recovery Point Objective): perda maxima aceitavel de dados em tempo.
+## Relevancia para o Exame
 
-Quanto menor o RTO e RPO, maior tende a ser o custo e a complexidade.
+No SAA-C03, este dominio costuma aparecer em perguntas com duas alternativas tecnicamente possiveis. O desempate normalmente vem de detalhes como: modelo de consistencia, estrategia de failover, custo de operacao recorrente, impacto de throughput e nivel de automacao exigido. Por isso, estudar este modulo significa treinar criterio de escolha, nao apenas nomenclatura.
 
-## Estrategias de DR
+## Sinais Praticos (3 a 5)
 
-1. Backup and Restore
-- custo mais baixo
-- restauracao mais lenta
-- RTO alto, RPO moderado/alto
-- ideal para workloads nao criticas
+1. Quando o enunciado pede resposta elastica com pouca operacao manual, privilegie servicos gerenciados.
+2. Quando houver dependencia entre componentes, valide se existe desacoplamento para absorver pico e falha parcial.
+3. Quando houver restricao de seguranca, confirme criptografia em transito/repouso e menor privilegio.
+4. Se o custo for parte do requisito, compare classes de consumo, modo de capacidade e padrao de acesso.
+5. Se o cenario for global, valide rota de trafego, latencia e estrategia de distribuicao.
 
-2. Pilot Light
-- componentes criticos minimos ficam ativos na regiao secundaria
-- aplicacao e capacidade escalam apenas no desastre
-- RTO medio, RPO baixo/medio
+## Armadilhas Comuns
 
-3. Warm Standby
-- ambiente reduzido sempre ativo em outra regiao
-- rapido scale-up no desastre
-- RTO baixo, RPO baixo
+- Escolher recurso premium sem necessidade real do cenario.
+- Confundir recurso de alta disponibilidade com recurso de escala de leitura.
+- Ignorar limites de servico e comportamento em falha.
+- Resolver requisito de seguranca com ferramenta inadequada para ciclo de vida do segredo.
 
-4. Multi-Site Active/Active
-- duas regioes ativas atendendo trafego
-- failover quase imediato
-- RTO e RPO muito baixos
-- maior custo e operacao mais complexa
+## Proximo Passo de Revisao
 
-## Servicos e padroes mais cobrados
+1. Revise o cheatsheet.md para consolidar sinais de decisao.
+2. Resolva questoes.md sem consulta para testar julgamento tecnico.
+3. Use lashcards.md em revisao curta diaria para fixar diferencas criticas.
 
-- Route 53 Failover + Health Checks para redirecionamento entre regioes.
-- AWS Elastic Disaster Recovery para replicacao continua de servidores e cutover rapido.
-- AWS Backup para politica central de backup e cofres cross-account.
-- S3 Versioning + CRR para objetos e resiliencia regional.
-- RDS/Aurora: snapshots, read replicas cross-region e Aurora Global Database.
-- DynamoDB: PITR e Global Tables para baixa latencia e continuidade.
-- EBS snapshots cross-region para restauracao de EC2.
+## Estudos Complementares
 
-## Dicas de exame
+Para reforco de fundamentos AWS antes de aprofundar cenarios arquiteturais:
+https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
 
-- Multi-AZ nao resolve desastre regional; para isso a resposta precisa de multi-region.
-- Se o enunciado destaca "menor custo", Backup and Restore ou Pilot Light tende a vencer.
-- Se pede "minimo downtime", Warm Standby ou Active/Active geralmente e melhor.
-- Se diz "menor esforco operacional", prefira servicos gerenciados e automacao nativa.
-- Se pede preservar DNS durante failover, pense em Route 53 com health checks.
-
-## Links relacionados
-
-- [Cheatsheet](./cheatsheet.md)
-- [Casos de uso](./casos-de-uso.md)
-- [Questoes](./questoes.md)
-- [Flashcards](./flashcards.md)
-- [Lab](./lab.md)
-- [Links oficiais](./links.md)
-
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+Para conectar arquitetura com IA generativa e Bedrock em trilha complementar:
+https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil

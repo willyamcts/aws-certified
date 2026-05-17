@@ -1,55 +1,113 @@
-# Questoes - Redes Avancadas e Conectividade Hibrida
+﻿# Questoes de Revisao
 
-## 1)
-Uma empresa conecta 30 VPCs em 10 contas. Qual solucao simplifica roteamento central?
+## QuestÃ£o 1
 
-A. VPC Peering full mesh
-B. Transit Gateway
-C. NAT Gateway compartilhado
-D. PrivateLink
+Um cenario exige decisao correta em Conectividade Hibrida. Qual abordagem e mais aderente?
 
-Resposta: B
+A) Aplicar solucao generica sem considerar Direct Connect.
+B) Usar Direct Connect com configuracao orientada ao requisito e operacao enxuta.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
 
-## 2)
-Qual opcao permite consumir um servico privado em outra conta sem peering completo entre CIDRs?
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-A. Transit Gateway
-B. VPC Peering
-C. PrivateLink
-D. Internet Gateway
+âœ… **Resposta correta:** B
 
-Resposta: C
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de conectividade hibrida com melhor equilibrio entre requisito, risco e operacao.
 
-## 3)
-Qual tecnologia oferece conectividade dedicada entre datacenter e AWS com menor variabilidade de latencia?
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
 
-A. Site-to-Site VPN
-B. AWS Direct Connect
-C. NAT Gateway
-D. VPC Endpoint Gateway
+</details>
 
-Resposta: B
+## QuestÃ£o 2
 
-## 4)
-Sobre VPC Peering, qual afirmacao e correta?
+Qual escolha reduz risco operacional neste dominio?
 
-A. Permite transitive routing
-B. Nao permite transitive routing
-C. Substitui TGW em qualquer escala
-D. Resolve sobreposicao de CIDR automaticamente
+A) Resolver tudo manualmente durante incidente.
+B) Combinar VPN com observabilidade e automacao.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
 
-Resposta: B
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-## 5)
-Para alta disponibilidade na conectividade hibrida, recomendacao comum:
+âœ… **Resposta correta:** B
 
-A. Apenas DX unico
-B. Apenas VPN unica
-C. DX principal + VPN backup
-D. Somente internet publica
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de conectividade hibrida com melhor equilibrio entre requisito, risco e operacao.
 
-Resposta: C
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+</details>
+
+## QuestÃ£o 3
+
+Para manter custo sob controle sem perder qualidade tecnica, o que fazer?
+
+A) Escolher sempre a opcao mais barata sem validar requisito.
+B) Dimensionar com base no uso real e aproveitar Transit Gateway quando fizer sentido.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de conectividade hibrida com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
+## QuestÃ£o 4
+
+Qual alternativa tende a ser incorreta na prova de 
+
+A) A que atende requisito dominante com menor complexidade.
+B) A que ignora sinais de BGP e dependencias da arquitetura.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de conectividade hibrida com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
+## QuestÃ£o 5
+
+Qual revisao aumenta acerto neste modulo?
+
+A) Rever apenas definicoes sem pratica de cenario.
+B) Treinar questoes focadas em BGP e PrivateLink com explicacao de trade-offs.
+C) Adicionar componentes sem necessidade do enunciado.
+D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+âœ… **Resposta correta:** B
+
+**ExplicaÃ§Ã£o:**
+A alternativa B cobre o objetivo tecnico de conectividade hibrida com melhor equilibrio entre requisito, risco e operacao.
+
+**Por que a alternativa A estÃ¡ errada:**
+Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+
+</details>
+
 

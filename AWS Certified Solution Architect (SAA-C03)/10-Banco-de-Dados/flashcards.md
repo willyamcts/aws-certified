@@ -1,105 +1,99 @@
-# Flashcards — Módulo 06: Banco de Dados
+﻿# Cartoes de Revisao
 
----
+## Card 01
 
-**P:** Qual é a diferença de replicação entre RDS Multi-AZ e Read Replica?
-**R:** Multi-AZ: replicação **síncrona** → zero RPO, failover automático (~1-2 min). Read Replica: replicação **assíncrona** → pequeno lag, para offload de leituras, failover manual (promover a standalone DB)
+**Pergunta:** Qual e o foco central deste modulo?
 
----
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-**P:** Quantas cópias os dados Aurora mantém e como?
-**R:** 6 cópias em 3 AZs (2 por AZ). Write quorum: 4/6. Read quorum: 3/6. Suporta perda de 1 AZ sem impacto em reads; perda de 2 AZs sem impacto em writes
+**Resposta:**
+Dominar decisoes de Banco de Dados orientadas por cenarios da prova SAA-C03.
 
----
+</details>
 
-**P:** Qual o RTO/RPO do Aurora Global Database em caso de falha regional?
-**R:** RPO < 1 segundo (replicação com lag de ~1s). RTO < 1 minuto (promover região secundária manualmente ou automaticamente via managed failover)
+## Card 02
 
----
+**Pergunta:** Qual erro recorrente neste tema?
 
-**P:** O que é RDS Proxy e quando usar?
-**R:** Proxy gerenciado que faz connection pooling entre aplicações e RDS/Aurora. Reutiliza conexões, evita connection exhaustion. Crítico para Lambda (sem estado, abre nova conexão a cada invoke) e ECS (muitas tasks)
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
----
+**Resposta:**
+Aplicar resposta generica sem validar sinais especificos de banco de dados no enunciado.
 
-**P:** Quanto tempo o RDS PITR (Point-In-Time Recovery) permite restaurar?
-**R:** Até os últimos 35 dias (configurável de 1 a 35 dias). Restaura para qualquer segundo dentro dessa janela usando backups + transaction logs
+</details>
 
----
+## Card 03
 
-**P:** Quais são os 2 modos de capacidade do DynamoDB e quando usar cada um?
-**R:** Provisioned: você define RCUs e WCUs + Auto Scaling. Use para carga previsível/consistente (mais barato). On-Demand: cobra por request. Use para carga imprevisível, novos workloads, spikes súbitos
+**Pergunta:** Como identificar a melhor alternativa?
 
----
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-**P:** O que é 1 RCU e 1 WCU no DynamoDB?
-**R:** 1 RCU = 1 read forte consistência de até 4 KB (ou 2 reads eventually consistent). 1 WCU = 1 write de até 1 KB por segundo
+**Resposta:**
+Priorizar requisito dominante e servicos que cobrem RDS e Aurora com menor operacao.
 
----
+</details>
 
-**P:** Qual é a latência do DAX vs DynamoDB direto?
-**R:** DynamoDB: milissegundos de latência. DAX (DynamoDB Accelerator): **microssegundos** (cache in-memory gerenciado, compatível com API DynamoDB)
+## Card 04
 
----
+**Pergunta:** Qual trade-off costuma aparecer?
 
-**P:** Qual é a diferença entre LSI e GSI no DynamoDB?
-**R:** LSI: mesma partition key, sort key diferente, criado APENAS na criação da tabela, usa throughput da tabela. GSI: partition key diferente, criado a qualquer momento, throughput independente
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
----
+**Resposta:**
+Equilibrar RDS com custo, desempenho e simplicidade operacional.
 
-**P:** Por quanto tempo DynamoDB Streams retém os dados?
-**R:** 24 horas. Streams captura item-level changes (INSERT, MODIFY, REMOVE) com imagem antes e/ou depois. Integra com Lambda (trigger) e DynamoDB Global Tables (replicação multi-região)
+</details>
 
----
+## Card 05
 
-**P:** Qual é o padrão de leitura "Lazy Loading" no ElastiCache?
-**R:** Cache Miss: busca do banco de dados → escreve no cache. Cache Hit: retorna do cache. Prós: só armazena dados solicitados. Contras: cache miss = 3 viagens (cache, DB, cache) + risco de dado stale
+**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
 
----
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-**P:** Qual é a diferença principal entre Redis e Memcached no ElastiCache?
-**R:** Redis: persistência, replicação, Multi-AZ, Pub/Sub, Sorted Sets, Geospatial, Cluster Mode (sharding). Memcached: multi-threading, sem persistência, sem replicação, simples, pure cache. Para HA e estruturas complexas: Redis
+**Resposta:**
+Uso intencional de Aurora com observabilidade para reduzir risco operacional.
 
----
+</details>
 
-**P:** O que é Redshift Enhanced VPC Routing?
-**R:** Força o tráfego COPY e UNLOAD do Redshift a usar a VPC (ao invés da internet pública/endpoints públicos S3). Permite controle via VPC Flow Logs, SG, NACLs. Recomendado para segurança e conformidade
+## Card 06
 
----
+**Pergunta:** Como evitar armadilha de overengineering?
 
-**P:** Quando usar Amazon Neptune?
-**R:** Para dados e queries de grafos: redes sociais (amizades), fraud detection (conexões suspeitas), knowledge graphs, motores de recomendação. Suporta Property Graph (Gremlin, openCypher) e RDF (SPARQL)
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
----
+**Resposta:**
+Evitar componentes extras quando DynamoDB ou ElastiCache ja resolve o requisito.
 
-**P:** Quando usar Amazon QLDB?
-**R:** Ledger database com histórico imutável e verificável criptograficamente. Para: registros financeiros, supply chain tracking, audit logs onde nenhum dado pode ser apagado ou modificado retroativamente
+</details>
 
----
+## Card 07
 
-**P:** Para qual workload Aurora Serverless v2 é ideal?
-**R:** Cargas de trabalho com tráfego muito variável (ex: dev/test, aplicações com picos noturnos ou sazonais). Escala de 0,5 a 128 ACUs em incrementos de 0,5 ACU em ~1 segundo. Zero downtime durante escalas
+**Pergunta:** Qual ponto revisar antes do simulado?
 
----
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-**P:** O que é o endpoint de leitura e endpoint de escrita do Aurora Cluster?
-**R:** Cluster Endpoint (escrita): aponta para a instância primary writer. Reader Endpoint: load balancer entre todas as Read Replicas. Aplicações devem usar o endpoint correto para separar reads de writes
+**Resposta:**
+Diferencas praticas entre backups e read replicas.
 
----
+</details>
 
-**P:** O que é ElastiCache Cluster Mode (sharding no Redis)?
-**R:** Distribui os key slots (partições do keyspace) entre múltiplos node groups (shards). Permite maior throughput total (escrita em paralelo em shards) e maior capacidade de dados do que um único nó. Cada shard tem réplicas para HA
+## Card 08
 
----
+**Pergunta:** Qual fechamento eficiente de revisao?
 
-**P:** O que é Amazon Keyspaces?
-**R:** Apache Cassandra compatível e totalmente gerenciado na AWS. Para migração lift-and-shift de workloads Cassandra sem gerenciar clusters. CQL (Cassandra Query Language) compatível
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
----
+**Resposta:**
+Converter erros deste modulo em regras objetivas de decisao sobre banco de dados.
 
-**P:** Qual o uso do Amazon Timestream?
-**R:** Time series database serverless. Para IoT data, DevOps metrics, telemetria de application performance. Armazena e analisa trilhões de eventos por dia. Queries com funções de análise temporal built-in
+</details>
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
 

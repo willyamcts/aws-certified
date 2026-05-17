@@ -1,32 +1,27 @@
-# Cheatsheet - AWS Organizations, Governanca e Custos
+﻿# Guia Rapido
 
-## Mapa rapido
+## Tabela de decisao
 
-| Necessidade | Servico/Padrao | Dica de prova |
-|---|---|---|
-| Guardrail de permissao em varias contas | SCP | Lembrar: nao concede, apenas restringe |
-| Provisionar landing zone padrao | Control Tower | Menor overhead para multi-account |
-| Acesso centralizado de usuarios | IAM Identity Center | Evita IAM users em cada conta |
-| Alertar estouro de orcamento | AWS Budgets | Alerta antes da fatura fechar |
-| Analise detalhada de gastos | CUR + Athena | Visao granular por servico/tag |
-| Reduzir custo de compute previsivel | Savings Plans / RI | Compromisso de uso reduz preco |
+| Sinal do enunciado | Quando usar | Quando evitar | Armadilha de prova |
+|---|---|---|---|
+| Baixa operacao manual | Servico gerenciado com automacao nativa | Solucao autogerenciada sem necessidade | Confundir controle total com melhor custo total |
+| Pico imprevisivel | Escala horizontal e desacoplamento | Capacidade fixa e ajuste manual | Dimensionar para media e falhar no pico |
+| Requisito de seguranca forte | Menor privilegio + criptografia + auditoria | Permissao ampla por conveniencia | Achar que criptografia sozinha resolve governanca |
+| Custo como restricao explicita | Escolha por perfil de consumo e acesso | Classe unica para todo dado | Reduzir custo sem validar impacto funcional |
 
-## Otimizacao de custo
+## Sinais de servico
 
-- rightsizing de EC2 e RDS
-- desligamento de ambientes nao produtivos
-- classes de storage adequadas (S3 lifecycle)
-- usar Spot em workloads stateless
-- revisar transferencias entre AZ/regioes
+- **Organizations**: priorize quando o cenario precisa de integracao nativa e menor carga operacional.
+- **Control Tower**: use quando houver necessidade de elasticidade controlada e comportamento previsivel em pico.
 
-## Frases gatilho
+## Quando usar este modulo na revisao
 
-- "across multiple AWS accounts" => Organizations/Control Tower
-- "prevent specific actions" => SCP
-- "cost visibility by team" => Cost Allocation Tags + CUR
-- "predictable usage" => RI/Savings Plans
-- "variable workload" => Savings Plans ou on-demand + autoscaling
+- Antes de simulados de arquitetura com foco em trade-offs.
+- Quando houver erro recorrente de escolha entre duas alternativas parecidas.
+- Na reta final para calibrar criterio de eliminacao de opcoes.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Armadilhas recorrentes
 
+- Resolver disponibilidade com recurso de performance.
+- Trocar simplicidade por arquitetura superdimensionada.
+- Ignorar observabilidade ao definir desenho final.

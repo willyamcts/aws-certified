@@ -1,59 +1,45 @@
-# 23 AWS Organizations, Governanca e Custos
+﻿# AWS Organizations Governanca e Custos
 
-## Objetivos do modulo
+## Visao Geral
 
-- desenhar ambientes multi-account com seguranca e governanca central
-- aplicar SCPs, tagging e controle de acesso por Organizational Unit
-- dominar servicos de custo no contexto de arquitetura: Budgets, Cost Explorer, CUR, Savings Plans e RI
-- responder cenarios do SAA-C03 que pedem reducao de custo com menor overhead operacional
+Este modulo cobre **Governanca multi-conta e eficiencia financeira** com foco no tipo de decisao que aparece no SAA-C03. A ideia central e transformar requisitos de negocio em escolhas tecnicas objetivas, equilibrando resiliencia, desempenho, seguranca e custo. Em prova, o diferencial nao e decorar servico isolado: e identificar qual restricao do cenario pesa mais e escolher o padrao que reduz risco operacional.
 
-## Conceitos fundamentais
+## Conceitos-Chave
 
-No SAA-C03, governanca e custo aparecem junto com seguranca e operacao. A ideia central e estruturar contas para reduzir risco, melhorar visibilidade financeira e aplicar guardrails sem travar o time.
+- Papel dos servicos: Organizations, Control Tower, Budgets, Cost Explorer.
+- Priorizacao por requisito dominante (latencia, disponibilidade, conformidade ou custo).
+- Integracao entre servicos com desacoplamento e observabilidade minima.
+- Escolha de arquitetura com menor complexidade viavel para o contexto.
 
-## Arquitetura multi-account recomendada
+## Relevancia para o Exame
 
-- Management account apenas para governanca e billing
-- OUs separadas por ambiente e criticidade (Sandbox, Dev, Prod, Security)
-- Contas dedicadas para logs e seguranca
-- Acesso humano central por IAM Identity Center
+No SAA-C03, este dominio costuma aparecer em perguntas com duas alternativas tecnicamente possiveis. O desempate normalmente vem de detalhes como: modelo de consistencia, estrategia de failover, custo de operacao recorrente, impacto de throughput e nivel de automacao exigido. Por isso, estudar este modulo significa treinar criterio de escolha, nao apenas nomenclatura.
 
-## Servicos e praticas chave
+## Sinais Praticos (3 a 5)
 
-- AWS Organizations: hierarquia de contas e consolidated billing
-- SCP: define teto de permissoes por OU/conta
-- AWS Control Tower: baseline multi-account com guardrails
-- AWS Budgets: alertas proativos por limite de gasto ou uso
-- Cost Explorer: analise de tendencia e recomendacoes
-- Cost and Usage Report (CUR): base detalhada para chargeback/showback
-- Savings Plans e Reserved Instances: compromisso para reduzir custo de compute
-- Cost Allocation Tags: rastrear custo por time/produto/ambiente
+1. Quando o enunciado pede resposta elastica com pouca operacao manual, privilegie servicos gerenciados.
+2. Quando houver dependencia entre componentes, valide se existe desacoplamento para absorver pico e falha parcial.
+3. Quando houver restricao de seguranca, confirme criptografia em transito/repouso e menor privilegio.
+4. Se o custo for parte do requisito, compare classes de consumo, modo de capacidade e padrao de acesso.
+5. Se o cenario for global, valide rota de trafego, latencia e estrategia de distribuicao.
 
-## Dicas de exame
+## Armadilhas Comuns
 
-- SCP nao concede permissoes; apenas restringe.
-- "Least operational overhead" em multi-account aponta para Control Tower e Identity Center.
-- Para visibilidade granular de custo em escala, CUR + Athena e alternativa recorrente.
-- Para workloads estaveis, RI/Savings Plans costuma ser resposta de otimizacao.
-- Spot e melhor para cargas tolerantes a interrupcao.
+- Escolher recurso premium sem necessidade real do cenario.
+- Confundir recurso de alta disponibilidade com recurso de escala de leitura.
+- Ignorar limites de servico e comportamento em falha.
+- Resolver requisito de seguranca com ferramenta inadequada para ciclo de vida do segredo.
 
-## Anti-padroes
+## Proximo Passo de Revisao
 
-- usar conta unica para tudo
-- usar root user no dia a dia
-- sem padrao de tags obrigatorias
-- sem limites/alertas de custo por ambiente
-- sem segregacao de contas de log e seguranca
+1. Revise o cheatsheet.md para consolidar sinais de decisao.
+2. Resolva questoes.md sem consulta para testar julgamento tecnico.
+3. Use lashcards.md em revisao curta diaria para fixar diferencas criticas.
 
-## Links relacionados
+## Estudos Complementares
 
-- [Cheatsheet](./cheatsheet.md)
-- [Casos de uso](./casos-de-uso.md)
-- [Questoes](./questoes.md)
-- [Flashcards](./flashcards.md)
-- [Lab](./lab.md)
-- [Links oficiais](./links.md)
+Para reforco de fundamentos AWS antes de aprofundar cenarios arquiteturais:
+https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+Para conectar arquitetura com IA generativa e Bedrock em trilha complementar:
+https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil

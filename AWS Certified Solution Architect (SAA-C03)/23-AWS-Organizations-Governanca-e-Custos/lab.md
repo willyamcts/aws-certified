@@ -1,30 +1,39 @@
-# Lab - Governanca Basica e Controle de Custos
+﻿# Lab Guiado
 
 ## Objetivo
-Configurar uma estrutura inicial de governanca e monitoramento financeiro.
 
-## Passos
+Montar um fluxo minimo funcional que demonstre **Governanca multi-conta e eficiencia financeira**, com validacao clara de comportamento e custo controlado para ambiente de estudo.
 
-1. Crie uma Organizacao (se ainda nao existir).
-2. Crie OUs: Sandbox, Dev e Prod.
-3. Mova contas para OUs corretas.
-4. Crie SCP de restricao regional (exemplo: apenas us-east-1 e sa-east-1).
-5. Ative Cost Allocation Tags (Environment, CostCenter, Owner).
-6. Crie AWS Budget mensal por conta com alerta por email/SNS.
-7. Abra Cost Explorer e valide dados por servico e tag.
+## Servicos usados
+
+Organizations, Control Tower, Budgets, Cost Explorer.
+
+## Faixa de custo esperada
+
+- Ambiente de estudo curto: baixo custo se executado por poucas horas.
+- Evite manter recursos ativos apos validacao.
+- Priorize camada gratuita quando disponivel.
+
+## Passo a passo
+
+1. Crie os recursos essenciais do fluxo em uma conta de laboratorio.
+2. Configure politicas minimas de acesso e observabilidade basica.
+3. Execute carga de teste pequena para validar resposta funcional.
+4. Simule uma falha simples (interrupcao de componente) e observe recuperacao.
+5. Registre metrica-chave e ajuste uma configuracao para comparar resultado.
 
 ## Validacao
 
-- Contas nas OUs corretas
-- SCP aplicada e validada
-- Alertas de budget funcionando
-- Custos visiveis por tag no explorer
+- Fluxo de ponta a ponta executa sem erro critico.
+- Logs/metricas mostram comportamento esperado.
+- Existe evidencia de decisao entre desempenho e custo.
 
-## Limpeza
+## Cleanup
 
-- remover budgets de teste
-- desanexar SCP de laboratorio
+1. Remova recursos criados no laboratorio.
+2. Apague dados temporarios e snapshots nao necessarios.
+3. Revise faturamento no dia seguinte para confirmar encerramento.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Takeaway para prova
 
+O ponto principal e identificar qual servico reduz risco operacional mantendo aderencia ao requisito central do cenario.

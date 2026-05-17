@@ -1,32 +1,39 @@
-# Lab - DR Multi-Region Basico
+﻿# Lab Guiado
 
 ## Objetivo
-Implementar um failover simples com Route 53 e replicacao de dados em S3.
 
-## Passos
+Montar um fluxo minimo funcional que demonstre **RTO/RPO e estrategias de continuidade**, com validacao clara de comportamento e custo controlado para ambiente de estudo.
 
-1. Crie dois buckets S3 em regioes diferentes.
-2. Habilite versioning em ambos.
-3. Configure CRR do bucket primario para o secundario.
-4. Publique uma pagina estatica em duas regioes (S3 static website ou EC2 minima).
-5. Configure Route 53 Failover Record:
-- Primary apontando para workload principal
-- Secondary apontando para workload secundaria
-6. Crie Health Check para o endpoint primario.
-7. Simule falha (interromper endpoint primario) e valide failover.
-8. Documente RTO observado.
+## Servicos usados
+
+Backup, Pilot Light, Warm Standby, Multi-Region.
+
+## Faixa de custo esperada
+
+- Ambiente de estudo curto: baixo custo se executado por poucas horas.
+- Evite manter recursos ativos apos validacao.
+- Priorize camada gratuita quando disponivel.
+
+## Passo a passo
+
+1. Crie os recursos essenciais do fluxo em uma conta de laboratorio.
+2. Configure politicas minimas de acesso e observabilidade basica.
+3. Execute carga de teste pequena para validar resposta funcional.
+4. Simule uma falha simples (interrupcao de componente) e observe recuperacao.
+5. Registre metrica-chave e ajuste uma configuracao para comparar resultado.
 
 ## Validacao
 
-- Objetos replicam para segunda regiao
-- DNS muda para endpoint secundario apos falha
-- Aplicacao volta ao primario apos recuperacao
+- Fluxo de ponta a ponta executa sem erro critico.
+- Logs/metricas mostram comportamento esperado.
+- Existe evidencia de decisao entre desempenho e custo.
 
-## Limpeza
+## Cleanup
 
-- remover records/health checks Route 53
-- excluir recursos e buckets para evitar custo
+1. Remova recursos criados no laboratorio.
+2. Apague dados temporarios e snapshots nao necessarios.
+3. Revise faturamento no dia seguinte para confirmar encerramento.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Takeaway para prova
 
+O ponto principal e identificar qual servico reduz risco operacional mantendo aderencia ao requisito central do cenario.

@@ -1,70 +1,27 @@
-# Cheatsheet — Introdução SAA-C03
+﻿# Guia Rapido
 
-## 📌 Pesos do Exame
+## Tabela de decisao
 
-| Domínio | Peso | Foco prático |
-|---|---:|---|
-| Design Resilient Architectures | 30% | HA, DR, desacoplamento, tolerância a falhas |
-| Design High-Performing Architectures | 28% | Compute, performance de storage, banco, cache, rede |
-| Design Secure Applications and Architectures | 24% | IAM, KMS, isolamento, auditoria, criptografia |
-| Design Cost-Optimized Architectures | 18% | Rightsizing, serviços gerenciados, classes e modelos de compra |
+| Sinal do enunciado | Quando usar | Quando evitar | Armadilha de prova |
+|---|---|---|---|
+| Baixa operacao manual | Servico gerenciado com automacao nativa | Solucao autogerenciada sem necessidade | Confundir controle total com melhor custo total |
+| Pico imprevisivel | Escala horizontal e desacoplamento | Capacidade fixa e ajuste manual | Dimensionar para media e falhar no pico |
+| Requisito de seguranca forte | Menor privilegio + criptografia + auditoria | Permissao ampla por conveniencia | Achar que criptografia sozinha resolve governanca |
+| Custo como restricao explicita | Escolha por perfil de consumo e acesso | Classe unica para todo dado | Reduzir custo sem validar impacto funcional |
 
-## 🧠 Palavras-Chave do Enunciado
+## Sinais de servico
 
-| Termo | O que normalmente sinaliza |
-|---|---|
-| least operational overhead | serviço gerenciado |
-| cost-effective | menor custo total coerente com o requisito |
-| highly available | multi-AZ, redundância, failover |
-| fault tolerant | tolerância a falha sem indisponibilidade percebida |
-| near real-time | streaming, evento, baixa latência |
-| minimal changes | evitar refatoração grande |
-| securely | IAM, KMS, endpoint privado, menor privilégio |
-| global users | CloudFront, Route 53, Global Accelerator |
+- **Well-Architected**: priorize quando o cenario precisa de integracao nativa e menor carga operacional.
+- **IAM**: use quando houver necessidade de elasticidade controlada e comportamento previsivel em pico.
 
-## 🧱 Serviços Mais Frequentes
+## Quando usar este modulo na revisao
 
-| Grupo | Serviços |
-|---|---|
-| Compute | EC2, Auto Scaling, ELB, Lambda |
-| Storage | S3, EBS, EFS |
-| Database | RDS, Aurora, DynamoDB, ElastiCache |
-| Network | VPC, Route 53, CloudFront, Transit Gateway |
-| Security | IAM, KMS, Secrets Manager, Security Groups |
-| Messaging | SQS, SNS, EventBridge |
-| Observability | CloudWatch, CloudTrail, Config |
+- Antes de simulados de arquitetura com foco em trade-offs.
+- Quando houver erro recorrente de escolha entre duas alternativas parecidas.
+- Na reta final para calibrar criterio de eliminacao de opcoes.
 
-## ⚖️ Comparações que Mais Caem
+## Armadilhas recorrentes
 
-| Comparação | Regra rápida |
-|---|---|
-| CloudFront vs Global Accelerator | cache HTTP vs aceleração global de tráfego |
-| RDS vs DynamoDB | relacional/transacional vs NoSQL altamente escalável |
-| SQS vs SNS | fila desacoplada vs pub/sub fan-out |
-| Secrets Manager vs Parameter Store | rotação de segredos vs configuração/segredo simples |
-| Lambda vs EC2 | serverless elástico vs controle granular |
-| Multi-AZ vs Multi-Region | HA regional vs DR regional completo |
-
-## ⏱️ Gestão de Tempo de Prova
-
-| Item | Referência |
-|---|---|
-| Questões | 65 |
-| Tempo total | 130 minutos |
-| Meta média por questão | ~2 minutos |
-| Questões longas | marcar, avançar e voltar |
-| Revisão final | reservar 10 a 15 minutos |
-
-## 🚫 Armadilhas Comuns
-
-| Armadilha | Correção |
-|---|---|
-| escolher a solução mais complexa | escolha a mais aderente ao requisito |
-| ignorar operação | inclua esforço administrativo na decisão |
-| confundir HA com DR | HA não substitui plano multi-region |
-| superestimar serviço raro | concentre-se no núcleo do exame |
-| decorar sem contexto | pratique cenários completos |
-
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+- Resolver disponibilidade com recurso de performance.
+- Trocar simplicidade por arquitetura superdimensionada.
+- Ignorar observabilidade ao definir desenho final.

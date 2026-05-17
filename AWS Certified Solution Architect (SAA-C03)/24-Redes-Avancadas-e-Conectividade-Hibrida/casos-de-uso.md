@@ -1,46 +1,25 @@
-# Casos de Uso - Redes Avancadas e Conectividade Hibrida
+﻿# Casos de Uso
 
-## Caso 1: Grupo empresarial multi-conta
+## Cenario 1: Pico de acesso em janela curta
 
-Cenario:
-- 50 VPCs em varias contas
-- necessidade de comunicacao controlada
+**Padrao recomendado:** camada gerenciada com escala automatica e desacoplamento.  
+**Motivo:** absorve variacao sem intervencao manual intensa.  
+**Sinal de prova:** termos como “pico imprevisivel”, “manter latencia” e “baixo esforco operacional”.
 
-Arquitetura:
-- Transit Gateway central
-- route tables separadas por dominio
-- inspeção de trafego em VPC de seguranca
+## Cenario 2: Requisito de auditoria e conformidade
 
-## Caso 2: SaaS privado para clientes enterprise
+**Padrao recomendado:** identidade granular, trilha de auditoria e criptografia fim a fim.  
+**Motivo:** garante rastreabilidade e protecao de dado sensivel.  
+**Sinal de prova:** “compliance”, “registro de acesso”, “dados sensiveis”.
 
-Cenario:
-- clientes em contas AWS diferentes
-- sem exposicao publica
+## Cenario 3: Reducao de custo com mesma experiencia
 
-Arquitetura:
-- NLB + Endpoint Service
-- consumo via Interface VPC Endpoint (PrivateLink)
+**Padrao recomendado:** ajustar classe/capacidade pelo perfil real de consumo.  
+**Motivo:** evita overprovisioning e reduz gasto recorrente.  
+**Sinal de prova:** “otimizacao de custo”, “padrao de uso conhecido”, “sem degradar UX”.
 
-## Caso 3: Datacenter para AWS com baixa variacao de latencia
+## Cenario 4: Evolucao incremental de arquitetura
 
-Cenario:
-- cargas sensiveis a variacao de rede
-- alto volume de dados
-
-Arquitetura:
-- AWS Direct Connect principal
-- Site-to-Site VPN como backup
-- BGP para failover
-
-## Caso 4: Integracao DNS hibrida
-
-Cenario:
-- aplicacoes on-premises precisam resolver zonas privadas na AWS
-
-Arquitetura:
-- Route 53 Resolver inbound endpoint
-- conditional forwarding no DNS on-premises
-
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+**Padrao recomendado:** comecar simples, com componentes gerenciados e pontos de extensao claros.  
+**Motivo:** acelera entrega e reduz risco de complexidade prematura.  
+**Sinal de prova:** “entrega rapida”, “crescimento gradual”, “equipe pequena”.

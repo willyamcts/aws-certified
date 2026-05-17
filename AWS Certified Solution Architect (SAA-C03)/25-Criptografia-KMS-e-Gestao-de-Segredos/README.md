@@ -1,53 +1,45 @@
-# 25 Criptografia, KMS e Gestao de Segredos
+﻿# Criptografia KMS e Gestao de Segredos
 
-## Objetivos do modulo
+## Visao Geral
 
-- dominar criptografia em repouso e em transito no contexto SAA-C03
-- diferenciar AWS KMS, CloudHSM, Secrets Manager, Parameter Store e ACM
-- decidir entre chaves AWS-managed e customer-managed com base em compliance
-- aplicar padroes de seguranca com menor sobrecarga operacional
+Este modulo cobre **Protecao de dados e ciclo de vida de segredos** com foco no tipo de decisao que aparece no SAA-C03. A ideia central e transformar requisitos de negocio em escolhas tecnicas objetivas, equilibrando resiliencia, desempenho, seguranca e custo. Em prova, o diferencial nao e decorar servico isolado: e identificar qual restricao do cenario pesa mais e escolher o padrao que reduz risco operacional.
 
-## Conceitos fundamentais
+## Conceitos-Chave
 
-A prova SAA-C03 cobra seguranca aplicada: nao basta saber o nome do servico, e preciso escolher a melhor combinacao de criptografia, controle de acesso e rotacao de segredos.
+- Papel dos servicos: KMS, Secrets Manager, SSM Parameter Store, CloudHSM.
+- Priorizacao por requisito dominante (latencia, disponibilidade, conformidade ou custo).
+- Integracao entre servicos com desacoplamento e observabilidade minima.
+- Escolha de arquitetura com menor complexidade viavel para o contexto.
 
-## KMS na pratica
+## Relevancia para o Exame
 
-- KMS gerencia chaves e operacoes criptograficas auditaveis.
-- Customer managed keys permitem controle de policy, rotacao e grants.
-- Key policy e obrigatoria para acesso correto.
-- Envelope encryption e padrao para dados em escala.
+No SAA-C03, este dominio costuma aparecer em perguntas com duas alternativas tecnicamente possiveis. O desempate normalmente vem de detalhes como: modelo de consistencia, estrategia de failover, custo de operacao recorrente, impacto de throughput e nivel de automacao exigido. Por isso, estudar este modulo significa treinar criterio de escolha, nao apenas nomenclatura.
 
-Fluxo resumido de envelope encryption:
-1. aplicacao pede data key ao KMS (GenerateDataKey)
-2. KMS retorna data key plaintext e cifrada
-3. aplicacao cifra os dados com a key plaintext
-4. armazena dados cifrados + data key cifrada
+## Sinais Praticos (3 a 5)
 
-## Segredos e certificados
+1. Quando o enunciado pede resposta elastica com pouca operacao manual, privilegie servicos gerenciados.
+2. Quando houver dependencia entre componentes, valide se existe desacoplamento para absorver pico e falha parcial.
+3. Quando houver restricao de seguranca, confirme criptografia em transito/repouso e menor privilegio.
+4. Se o custo for parte do requisito, compare classes de consumo, modo de capacidade e padrao de acesso.
+5. Se o cenario for global, valide rota de trafego, latencia e estrategia de distribuicao.
 
-- Secrets Manager: segredos com rotacao automatica (forte para credenciais de banco).
-- Parameter Store SecureString: configuracoes e segredos simples, custo menor.
-- ACM: certificados TLS para ALB, CloudFront e API Gateway.
-- ACM Private CA: emissao de certificados privados internos.
+## Armadilhas Comuns
 
-## Dicas de exame
+- Escolher recurso premium sem necessidade real do cenario.
+- Confundir recurso de alta disponibilidade com recurso de escala de leitura.
+- Ignorar limites de servico e comportamento em falha.
+- Resolver requisito de seguranca com ferramenta inadequada para ciclo de vida do segredo.
 
-- se houver requisito de rotacao automatica de credencial, resposta tende a Secrets Manager.
-- se pede "full control over encryption keys", use customer managed KMS key.
-- se precisa HSM dedicado e controle criptografico especializado, considere CloudHSM.
-- para CloudFront com ACM, certificado publico deve estar em us-east-1.
-- criptografia sem controle de permissao nao resolve risco; IAM + key policy importam.
+## Proximo Passo de Revisao
 
-## Links relacionados
+1. Revise o cheatsheet.md para consolidar sinais de decisao.
+2. Resolva questoes.md sem consulta para testar julgamento tecnico.
+3. Use lashcards.md em revisao curta diaria para fixar diferencas criticas.
 
-- [Cheatsheet](./cheatsheet.md)
-- [Casos de uso](./casos-de-uso.md)
-- [Questoes](./questoes.md)
-- [Flashcards](./flashcards.md)
-- [Lab](./lab.md)
-- [Links oficiais](./links.md)
+## Estudos Complementares
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+Para reforco de fundamentos AWS antes de aprofundar cenarios arquiteturais:
+https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
 
+Para conectar arquitetura com IA generativa e Bedrock em trilha complementar:
+https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil

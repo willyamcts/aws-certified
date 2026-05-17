@@ -1,14 +1,16 @@
-# Links Oficiais - Criptografia, KMS e Gestao de Segredos
+﻿# Links Recomendados
 
-- AWS KMS: https://docs.aws.amazon.com/kms/
-- KMS key policies: https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html
-- AWS Secrets Manager: https://docs.aws.amazon.com/secretsmanager/
-- AWS Systems Manager Parameter Store: https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html
-- AWS Certificate Manager: https://docs.aws.amazon.com/acm/
-- AWS CloudHSM: https://docs.aws.amazon.com/cloudhsm/
-- Encryption Best Practices: https://docs.aws.amazon.com/prescriptive-guidance/latest/encryption-best-practices/
-- AWS Security Blog: https://aws.amazon.com/blogs/security/
+## Referencias oficiais AWS
+- https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
+- https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
+- https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Por que estes links importam
+- Documentacao oficial reduz ambiguidade de comportamento de servico em prova.
+- Guias de boas praticas ajudam a entender trade-off, nao apenas configuracao.
+- Whitepapers e paginas de certificacao alinham terminologia e expectativa do exame.
 
+## Ordem sugerida de leitura
+1. Visao geral do servico.
+2. Limites, seguranca e custos.
+3. Boas praticas e padroes de arquitetura.

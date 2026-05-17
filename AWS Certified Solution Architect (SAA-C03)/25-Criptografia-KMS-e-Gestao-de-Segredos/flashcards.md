@@ -1,35 +1,99 @@
-# Flashcards - Criptografia, KMS e Gestao de Segredos
+﻿# Cartoes de Revisao
 
-1. Servico para rotacao automatica de segredos?
-- Secrets Manager.
+## Card 01
 
-2. Parametros de app com custo menor?
-- Parameter Store.
+**Pergunta:** Qual e o foco central deste modulo?
 
-3. Chave com controle total do cliente?
-- Customer-managed KMS key.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-4. Qual policy e obrigatoria no KMS?
-- Key policy.
+**Resposta:**
+Dominar decisoes de Criptografia e Segredos orientadas por cenarios da prova SAA-C03.
 
-5. Criptografia em escala usa qual padrao?
-- Envelope encryption.
+</details>
 
-6. Certificado CloudFront no ACM em qual regiao?
-- us-east-1.
+## Card 02
 
-7. Melhor pratica para app acessar segredo?
-- IAM role, sem credencial hardcoded.
+**Pergunta:** Qual erro recorrente neste tema?
 
-8. Servico para HSM dedicado?
-- AWS CloudHSM.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-9. Auditoria de uso de chave?
-- CloudTrail.
+**Resposta:**
+Aplicar resposta generica sem validar sinais especificos de criptografia e segredos no enunciado.
 
-10. Quando usar Secrets Manager no exame?
-- Quando ha exigencia de rotacao automatica.
+</details>
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Card 03
+
+**Pergunta:** Como identificar a melhor alternativa?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Priorizar requisito dominante e servicos que cobrem KMS e Secrets Manager com menor operacao.
+
+</details>
+
+## Card 04
+
+**Pergunta:** Qual trade-off costuma aparecer?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Equilibrar KMS com custo, desempenho e simplicidade operacional.
+
+</details>
+
+## Card 05
+
+**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Uso intencional de Secrets Manager com observabilidade para reduzir risco operacional.
+
+</details>
+
+## Card 06
+
+**Pergunta:** Como evitar armadilha de overengineering?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Evitar componentes extras quando rotacao ou envelope encryption ja resolve o requisito.
+
+</details>
+
+## Card 07
+
+**Pergunta:** Qual ponto revisar antes do simulado?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Diferencas praticas entre envelope encryption e auditoria.
+
+</details>
+
+## Card 08
+
+**Pergunta:** Qual fechamento eficiente de revisao?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Converter erros deste modulo em regras objetivas de decisao sobre criptografia e segredos.
+
+</details>
+
 

@@ -1,89 +1,99 @@
-# Flashcards — Introdução SAA-C03
+﻿# Cartoes de Revisao
 
----
-**P:** Qual domínio tem maior peso no SAA-C03?  
-**R:** Design Resilient Architectures, com 30%.
+## Card 01
 
----
-**P:** Qual domínio tem o menor peso formal?  
-**R:** Design Cost-Optimized Architectures, com 18%.
+**Pergunta:** Qual e o foco central deste modulo?
 
----
-**P:** O SAA-C03 cobra mais catálogo de serviços ou decisão arquitetural?  
-**R:** Decisão arquitetural com contexto e trade-offs.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
----
-**P:** O que diferencia mais o SAA-C03 do CLF-C02?  
-**R:** A profundidade nas escolhas técnicas e justificativa entre alternativas plausíveis.
+**Resposta:**
+Dominar decisoes de Introducao orientadas por cenarios da prova SAA-C03.
 
----
-**P:** “Least operational overhead” costuma apontar para quê?  
-**R:** Serviços gerenciados, se atenderem ao requisito.
+</details>
 
----
-**P:** Multi-AZ substitui Multi-Region?  
-**R:** Não. Multi-AZ trata falhas de AZ; Multi-Region trata desastre regional.
+## Card 02
 
----
-**P:** CloudFront vs Global Accelerator em uma frase?  
-**R:** CloudFront é CDN com cache; Global Accelerator acelera tráfego global sem ser cache edge.
+**Pergunta:** Qual erro recorrente neste tema?
 
----
-**P:** RDS vs DynamoDB no raciocínio inicial?  
-**R:** RDS para relacional/transacional; DynamoDB para chave-valor/documento com escala horizontal.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
----
-**P:** SQS vs SNS em uma frase?  
-**R:** SQS desacopla com fila; SNS distribui mensagens para múltiplos assinantes.
+**Resposta:**
+Aplicar resposta generica sem validar sinais especificos de introducao no enunciado.
 
----
-**P:** Secrets Manager vs Parameter Store?  
-**R:** Secrets Manager é mais forte para segredos com rotação nativa.
+</details>
 
----
-**P:** CloudTrail registra o quê?  
-**R:** Chamadas de API e eventos de auditoria na conta AWS.
+## Card 03
 
----
-**P:** Qual bloco de serviços aparece em grande parte do exame?  
-**R:** EC2, ELB, ASG, S3, VPC, IAM, RDS, DynamoDB, Lambda, Route 53 e KMS.
+**Pergunta:** Como identificar a melhor alternativa?
 
----
-**P:** “Minimal changes to the application” indica o quê?  
-**R:** Evitar alternativas que exigem refatoração grande.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
----
-**P:** Near real-time analytics tende a apontar para quê?  
-**R:** Streaming ou processamento orientado a eventos, não batch tardio.
+**Resposta:**
+Priorizar requisito dominante e servicos que cobrem requisito dominante e trade-off com menor operacao.
 
----
-**P:** O exame prefere mais controle ou menos operação?  
-**R:** Menos operação, desde que o requisito funcional e não funcional seja atendido.
+</details>
 
----
-**P:** O que a prova mede além de conhecimento técnico?  
-**R:** Capacidade de ler contexto e priorizar trade-offs corretos.
+## Card 04
 
----
-**P:** Qual é a região padrão recomendada para labs deste repositório?  
-**R:** us-east-1.
+**Pergunta:** Qual trade-off costuma aparecer?
 
----
-**P:** O que significa “cost-effective” em questão da AWS?  
-**R:** Melhor equilíbrio entre custo total e requisito, não apenas menor preço bruto.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
----
-**P:** Qual erro comum de preparação para o SAA-C03?  
-**R:** Estudar serviços raros demais e negligenciar os blocos centrais.
+**Resposta:**
+Equilibrar requisito dominante com custo, desempenho e simplicidade operacional.
 
----
-**P:** Como revisar melhor ao longo de 8 semanas?  
-**R:** Alternar teoria densa, questões, revisão curta e simulados na reta final.
+</details>
 
----
-**P:** O que fazer quando duas alternativas parecem corretas?  
-**R:** Releia requisito principal, restrições e palavras qualificadoras do enunciado.
+## Card 05
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Uso intencional de trade-off com observabilidade para reduzir risco operacional.
+
+</details>
+
+## Card 06
+
+**Pergunta:** Como evitar armadilha de overengineering?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Evitar componentes extras quando baixo esforco operacional ou eliminacao de alternativas ja resolve o requisito.
+
+</details>
+
+## Card 07
+
+**Pergunta:** Qual ponto revisar antes do simulado?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Diferencas praticas entre eliminacao de alternativas e caderno de erros.
+
+</details>
+
+## Card 08
+
+**Pergunta:** Qual fechamento eficiente de revisao?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Converter erros deste modulo em regras objetivas de decisao sobre introducao.
+
+</details>
+
 

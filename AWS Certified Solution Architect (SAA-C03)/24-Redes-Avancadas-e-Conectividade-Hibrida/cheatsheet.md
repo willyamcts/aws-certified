@@ -1,37 +1,27 @@
-# Cheatsheet - Redes Avancadas e Conectividade Hibrida
+﻿# Guia Rapido
 
-## Escolha rapida
+## Tabela de decisao
 
-| Cenario | Solucao recomendada |
-|---|---|
-| 2 VPCs com troca simples de trafego | VPC Peering |
-| dezenas de VPCs e contas | Transit Gateway |
-| publicar servico interno para varias contas | PrivateLink |
-| conectar filial rapidamente | Site-to-Site VPN |
-| throughput alto e latencia previsivel | Direct Connect |
+| Sinal do enunciado | Quando usar | Quando evitar | Armadilha de prova |
+|---|---|---|---|
+| Baixa operacao manual | Servico gerenciado com automacao nativa | Solucao autogerenciada sem necessidade | Confundir controle total com melhor custo total |
+| Pico imprevisivel | Escala horizontal e desacoplamento | Capacidade fixa e ajuste manual | Dimensionar para media e falhar no pico |
+| Requisito de seguranca forte | Menor privilegio + criptografia + auditoria | Permissao ampla por conveniencia | Achar que criptografia sozinha resolve governanca |
+| Custo como restricao explicita | Escolha por perfil de consumo e acesso | Classe unica para todo dado | Reduzir custo sem validar impacto funcional |
 
-## Regras importantes
+## Sinais de servico
 
-- VPC Peering: sem transitive routing
-- TGW: roteamento central com route tables separadas
-- PrivateLink: conecta consumidor ao endpoint de servico privado
-- DX: usar link redundante e VPN como contingencia
-- Resolver inbound/outbound endpoints: DNS hibrido
+- **Transit Gateway**: priorize quando o cenario precisa de integracao nativa e menor carga operacional.
+- **Direct Connect**: use quando houver necessidade de elasticidade controlada e comportamento previsivel em pico.
 
-## Armadilhas de prova
+## Quando usar este modulo na revisao
 
-- usar peering em malha grande (nao escala)
-- esquecer overlapping CIDR (bloqueia peering/TGW)
-- assumir que Security Group filtra trafego de internet de subnet publica sem rota correta
-- confundir NACL stateful (na verdade e stateless)
+- Antes de simulados de arquitetura com foco em trade-offs.
+- Quando houver erro recorrente de escolha entre duas alternativas parecidas.
+- Na reta final para calibrar criterio de eliminacao de opcoes.
 
-## Frases gatilho
+## Armadilhas recorrentes
 
-- "multiple VPCs across accounts" => Transit Gateway
-- "privately access service" => PrivateLink
-- "consistent network performance" => Direct Connect
-- "encrypted connection over internet" => VPN
-
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
-
+- Resolver disponibilidade com recurso de performance.
+- Trocar simplicidade por arquitetura superdimensionada.
+- Ignorar observabilidade ao definir desenho final.

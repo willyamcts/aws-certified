@@ -1,35 +1,99 @@
-# Flashcards - AWS Organizations, Governanca e Custos
+﻿# Cartoes de Revisao
 
-1. SCP concede permissao?
-- Nao, apenas restringe.
+## Card 01
 
-2. Qual conta nao e afetada por SCP?
-- Management account.
+**Pergunta:** Qual e o foco central deste modulo?
 
-3. Servico para landing zone multi-account?
-- AWS Control Tower.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-4. Acesso humano central em varias contas?
-- IAM Identity Center.
+**Resposta:**
+Dominar decisoes de Governanca e Custos orientadas por cenarios da prova SAA-C03.
 
-5. Relatorio detalhado de custo para consultas?
-- CUR.
+</details>
 
-6. Alerta preventivo de custo?
-- AWS Budgets.
+## Card 02
 
-7. Ferramenta de tendencia e recomendacao de custo?
-- Cost Explorer.
+**Pergunta:** Qual erro recorrente neste tema?
 
-8. Economia com compromisso de uso?
-- Savings Plans/RI.
+<details>
+<summary><strong>Ver resposta</strong></summary>
 
-9. Melhor uso de Spot?
-- Cargas tolerantes a interrupcao.
+**Resposta:**
+Aplicar resposta generica sem validar sinais especificos de governanca e custos no enunciado.
 
-10. Base de chargeback?
-- Tags de alocacao + CUR.
+</details>
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Card 03
+
+**Pergunta:** Como identificar a melhor alternativa?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Priorizar requisito dominante e servicos que cobrem Organizations e SCP com menor operacao.
+
+</details>
+
+## Card 04
+
+**Pergunta:** Qual trade-off costuma aparecer?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Equilibrar Organizations com custo, desempenho e simplicidade operacional.
+
+</details>
+
+## Card 05
+
+**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Uso intencional de SCP com observabilidade para reduzir risco operacional.
+
+</details>
+
+## Card 06
+
+**Pergunta:** Como evitar armadilha de overengineering?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Evitar componentes extras quando Cost Explorer ou rightsizing ja resolve o requisito.
+
+</details>
+
+## Card 07
+
+**Pergunta:** Qual ponto revisar antes do simulado?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Diferencas praticas entre Savings Plans e tags.
+
+</details>
+
+## Card 08
+
+**Pergunta:** Qual fechamento eficiente de revisao?
+
+<details>
+<summary><strong>Ver resposta</strong></summary>
+
+**Resposta:**
+Converter erros deste modulo em regras objetivas de decisao sobre governanca e custos.
+
+</details>
+
 

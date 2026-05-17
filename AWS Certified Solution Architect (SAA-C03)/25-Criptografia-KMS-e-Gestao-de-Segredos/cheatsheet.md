@@ -1,29 +1,27 @@
-# Cheatsheet - Criptografia, KMS e Gestao de Segredos
+﻿# Guia Rapido
 
-## Mapa rapido
+## Tabela de decisao
 
-| Necessidade | Melhor escolha | Observacao |
-|---|---|---|
-| Chave com controle de policy e auditoria | KMS customer-managed key | Mais controle para compliance |
-| Rotacao automatica de segredos | Secrets Manager | Integracao forte com RDS |
-| Parametros de app com baixo custo | Parameter Store | SecureString usa KMS |
-| Certificado TLS para ALB/CloudFront/API Gateway | ACM | Public cert gratuito |
-| Controle criptografico em HSM dedicado | CloudHSM | Maior complexidade operacional |
+| Sinal do enunciado | Quando usar | Quando evitar | Armadilha de prova |
+|---|---|---|---|
+| Baixa operacao manual | Servico gerenciado com automacao nativa | Solucao autogerenciada sem necessidade | Confundir controle total com melhor custo total |
+| Pico imprevisivel | Escala horizontal e desacoplamento | Capacidade fixa e ajuste manual | Dimensionar para media e falhar no pico |
+| Requisito de seguranca forte | Menor privilegio + criptografia + auditoria | Permissao ampla por conveniencia | Achar que criptografia sozinha resolve governanca |
+| Custo como restricao explicita | Escolha por perfil de consumo e acesso | Classe unica para todo dado | Reduzir custo sem validar impacto funcional |
 
-## Regras de prova
+## Sinais de servico
 
-- key policy e essencial para permissao no KMS
-- explicit deny sempre prevalece
-- use IAM role para apps em vez de chaves estaticas
-- CloudFront + ACM publico => certificado em us-east-1
+- **KMS**: priorize quando o cenario precisa de integracao nativa e menor carga operacional.
+- **Secrets Manager**: use quando houver necessidade de elasticidade controlada e comportamento previsivel em pico.
 
-## Armadilhas
+## Quando usar este modulo na revisao
 
-- confundir Secrets Manager com Parameter Store em cenario de rotacao automatica
-- esquecer permissao kms:Decrypt no principal consumidor
-- assumir que criptografar no servico dispensa gestao de acesso
-- ignorar custo de chamadas KMS em alto throughput
+- Antes de simulados de arquitetura com foco em trade-offs.
+- Quando houver erro recorrente de escolha entre duas alternativas parecidas.
+- Na reta final para calibrar criterio de eliminacao de opcoes.
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Armadilhas recorrentes
 
+- Resolver disponibilidade com recurso de performance.
+- Trocar simplicidade por arquitetura superdimensionada.
+- Ignorar observabilidade ao definir desenho final.

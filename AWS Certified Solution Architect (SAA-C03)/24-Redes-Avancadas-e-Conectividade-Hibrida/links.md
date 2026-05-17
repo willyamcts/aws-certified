@@ -1,13 +1,16 @@
-# Links Oficiais - Redes Avancadas e Conectividade Hibrida
+﻿# Links Recomendados
 
-- Amazon VPC Peering: https://docs.aws.amazon.com/vpc/latest/peering/
-- AWS Transit Gateway: https://docs.aws.amazon.com/vpc/latest/tgw/
-- AWS PrivateLink: https://docs.aws.amazon.com/vpc/latest/privatelink/
-- AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/
-- AWS Direct Connect: https://docs.aws.amazon.com/directconnect/
-- Route 53 Resolver: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html
-- AWS Networking and Content Delivery: https://aws.amazon.com/products/networking/
+## Referencias oficiais AWS
+- https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html
+- https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html
+- https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html
 
----
-_Credito autoral: Thiago Cardoso - [LinkedIn](https://www.linkedin.com/in/analyticsthiagocardoso)_
+## Por que estes links importam
+- Documentacao oficial reduz ambiguidade de comportamento de servico em prova.
+- Guias de boas praticas ajudam a entender trade-off, nao apenas configuracao.
+- Whitepapers e paginas de certificacao alinham terminologia e expectativa do exame.
 
+## Ordem sugerida de leitura
+1. Visao geral do servico.
+2. Limites, seguranca e custos.
+3. Boas praticas e padroes de arquitetura.
